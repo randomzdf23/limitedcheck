@@ -47,21 +47,26 @@
             border-radius: 10px;
             margin: 40px 0;
         }
-        .install-btn {
-            background: linear-gradient(45deg, #4CAF50, #45a049);
+        .drag-btn {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
             color: white;
             border: none;
-            padding: 18px 36px;
-            font-size: 1.3rem;
-            border-radius: 50px;
-            cursor: pointer;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: grab;
             margin: 20px 0;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            border: 3px dashed white;
         }
-        .install-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        .drag-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+            cursor: grabbing;
+        }
+        .drag-btn:active {
+            transform: scale(0.95);
         }
         .features {
             display: grid;
@@ -83,17 +88,6 @@
             font-size: 3rem;
             margin-bottom: 15px;
         }
-        .screenshots {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 50px 0;
-        }
-        .screenshot {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -108,22 +102,55 @@
             border-radius: 20px;
             margin: 10px;
         }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .instructions ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Roblox Poison Checker</h1>
-            <p class="subtitle">Saftey trading extension for Roblox traders.</p>
+            <p class="subtitle">Safety trading extension for Roblox traders.</p>
             <div class="download-stats">⭐ 4.8/5 Rating</div>
             <div class="download-stats">📥 400,000+ Downloads</div>
         </header>
 
         <section class="install-section">
-            <h2>Add Roblox Poison Checker</h2>
-            <p>Have a safe and protected trading experience With roblox Poison Checker </p>
-            <button class="install-btn" onclick="installExtension()">Add to Chrome</button>
-            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">Works with Chrome, Edge, and other Chromium browsers</p>
+            <h2>Install Roblox Poison Checker</h2>
+            <p>Drag the button below to your browser's extensions page</p>
+            
+            <!-- Drag Button -->
+            <button class="drag-btn" draggable="true" id="dragButton">
+                🎯 Drag me to Extensions
+            </button>
+            
+            <div class="instructions">
+                <h3>📋 Simple Installation:</h3>
+                <ol>
+                    <li><strong>Drag the button above</strong> to your address bar</li>
+                    <li>Type or go to: <code>chrome://extensions</code> (Chrome) or <code>brave://extensions</code> (Brave)</li>
+                    <li><strong>Drop the button</strong> anywhere on the extensions page</li>
+                    <li>Enable <strong>Developer mode</strong> (top-right toggle)</li>
+                    <li>Click <strong>"Keep"</strong> if prompted</li>
+                    <li>That's it! Extension is installed</li>
+                </ol>
+            </div>
+            
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">
+                Works with Chrome, Brave, Edge, and other Chromium browsers
+            </p>
         </section>
 
         <section class="features">
@@ -135,30 +162,4 @@
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
                 <h3>Safety</h3>
-                <p>Gurantees a thorough limited cleaning process to help clean your inventory with poisoned and inactive limiteds.Your saftey is our top priority.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Instant Clean for poisoned items with efficency and 0 delays to help you recover your item. </p>
-            </div>
-        </section>
-
-
-        <section style="text-align: center; margin: 50px 0;">
-            <h2>Trusted by Thousands of Traders</h2>
-            <p style="max-width: 600px; margin: 20px auto;">
-                Join the community of professional Roblox traders who use our tools to enhance their trading experience safely and efficiently.
-            </p>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Roblox Poison Checker. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.7;">
-            </p>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <p>Guarantees a thorough limited cleaning process to help clean your inven
