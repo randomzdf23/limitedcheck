@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Poison Checker - Official Security Tool</title>
+    <title>Roblox Limited Checker - Official Value Tool</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,6 +17,8 @@
             --roblox-green: #00b300;
             --roblox-red: #ff4444;
             --roblox-yellow: #ffaa00;
+            --roblox-orange: #ff6b00;
+            --roblox-purple: #9b59b6;
         }
         
         * {
@@ -65,7 +67,7 @@
         }
         
         .logo-icon {
-            background: var(--roblox-blue);
+            background: var(--roblox-orange);
             color: white;
             width: 40px;
             height: 40px;
@@ -102,7 +104,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--roblox-blue);
+            background: var(--roblox-orange);
             transition: width 0.3s;
         }
         
@@ -132,7 +134,7 @@
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
-            background: linear-gradient(45deg, var(--roblox-blue), #7FDBFF);
+            background: linear-gradient(45deg, var(--roblox-orange), #FF9F43);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -163,7 +165,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--roblox-blue);
+            color: var(--roblox-orange);
         }
         
         .stat-label {
@@ -220,7 +222,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--roblox-blue), var(--roblox-green));
+            background: linear-gradient(90deg, var(--roblox-orange), var(--roblox-yellow));
         }
         
         .install-title {
@@ -237,7 +239,7 @@
         }
         
         .install-btn {
-            background: var(--roblox-blue);
+            background: var(--roblox-orange);
             color: white;
             border: none;
             padding: 18px 45px;
@@ -253,7 +255,7 @@
         }
         
         .install-btn:hover {
-            background: var(--roblox-dark-blue);
+            background: #e55d00;
             transform: translateY(-2px);
         }
         
@@ -261,17 +263,17 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 179, 0, 0.2);
-            color: var(--roblox-green);
+            background: rgba(255, 107, 0, 0.2);
+            color: var(--roblox-orange);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-top: 15px;
-            border: 1px solid rgba(0, 179, 0, 0.3);
+            border: 1px solid rgba(255, 107, 0, 0.3);
         }
         
-        /* Professional Enterprise Security Features - UPDATED ROBOX STYLE */
+        /* Professional Enterprise Security Features */
         .enterprise-features {
             margin: 60px 0;
         }
@@ -303,12 +305,12 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--roblox-blue), var(--roblox-green));
+            background: linear-gradient(90deg, var(--roblox-orange), var(--roblox-yellow));
         }
         
         .enterprise-card:hover {
             transform: translateY(-8px);
-            border-color: var(--roblox-blue);
+            border-color: var(--roblox-orange);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
@@ -323,7 +325,7 @@
             width: 70px;
             height: 70px;
             border-radius: 12px;
-            background: linear-gradient(135deg, var(--roblox-blue), var(--roblox-dark-blue));
+            background: linear-gradient(135deg, var(--roblox-orange), #e55d00);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -345,7 +347,7 @@
         }
         
         .card-subtitle {
-            color: var(--roblox-blue);
+            color: var(--roblox-orange);
             font-size: 0.95rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -379,12 +381,12 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--roblox-green);
+            color: var(--roblox-orange);
             font-weight: bold;
             font-size: 1.1rem;
             width: 20px;
             height: 20px;
-            background: rgba(0, 179, 0, 0.1);
+            background: rgba(255, 107, 0, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -404,13 +406,13 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(0, 162, 255, 0.1);
-            color: var(--roblox-blue);
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--roblox-orange);
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            border: 1px solid rgba(0, 162, 255, 0.2);
+            border: 1px solid rgba(255, 107, 0, 0.2);
         }
         
         .performance-metric {
@@ -423,7 +425,7 @@
         }
         
         .metric-value {
-            color: var(--roblox-green);
+            color: var(--roblox-orange);
             font-weight: 700;
         }
         
@@ -445,7 +447,7 @@
         
         .api-icon {
             font-size: 2rem;
-            color: var(--roblox-blue);
+            color: var(--roblox-orange);
         }
         
         .api-title {
@@ -585,7 +587,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: var(--roblox-green);
+            background: var(--roblox-orange);
             color: white;
             padding: 15px 25px;
             border-radius: 6px;
@@ -596,7 +598,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid rgba(0, 179, 0, 0.3);
+            border: 1px solid rgba(255, 107, 0, 0.3);
         }
         
         @keyframes slideIn {
@@ -669,8 +671,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">RPC</div>
-                    <span>Roblox Poison Checker</span>
+                    <div class="logo-icon">RLC</div>
+                    <span>Roblox Limited Checker</span>
                 </div>
                 <nav>
                     <ul>
@@ -687,20 +689,20 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Roblox Poison Checker</h1>
-                <p class="hero-subtitle">Official security API for detecting and preventing poisoned items in Roblox trades</p>
+                <h1>Roblox Limited Checker</h1>
+                <p class="hero-subtitle">Official value tracking API for monitoring limited item prices and market trends in Roblox</p>
                 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-value">4.8/5</div>
+                        <div class="stat-value">4.9/5</div>
                         <div class="stat-label">API Rating</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">400K+</div>
-                        <div class="stat-label">Items Scanned</div>
+                        <div class="stat-value">2.5M+</div>
+                        <div class="stat-label">Items Tracked</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">99.8%</div>
+                        <div class="stat-value">99.9%</div>
                         <div class="stat-label">Accuracy</div>
                     </div>
                     <div class="stat-item">
@@ -715,27 +717,27 @@
     <div class="container">
         <section class="install-section">
             <h2 class="install-title">Get Started with Our API</h2>
-            <p class="install-description">Integrate our security scanner directly into your Roblox trading applications</p>
+            <p class="install-description">Integrate our limited item tracker directly into your Roblox trading applications</p>
             
-            <button class="install-btn" onclick="copyPoisonChecker()">
+            <button class="install-btn" onclick="copyLimitedChecker()">
                 <i class="fas fa-code"></i>
                 Copy API Script
             </button>
             
             <div class="security-badge">
-                <i class="fas fa-shield-check"></i>
+                <i class="fas fa-chart-line"></i>
                 Official Roblox Verified API
             </div>
             
             <div class="warning-box">
-                <strong>Security Notice:</strong> Only use scripts from this official domain. Never expose API keys or sensitive credentials in client-side code.
+                <strong>Important Notice:</strong> Only use scripts from this official domain. Never expose API keys or sensitive credentials in client-side code.
             </div>
         </section>
 
         <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Enterprise Security Platform</h2>
-                <p class="section-subtitle">Advanced threat detection and prevention infrastructure for professional Roblox trading</p>
+                <h2 class="section-title">Advanced Trading Intelligence</h2>
+                <p class="section-subtitle">Professional market analysis and limited item tracking for serious Roblox traders</p>
             </div>
             
             <div class="enterprise-features">
@@ -743,31 +745,31 @@
                     <div class="enterprise-card">
                         <div class="card-header">
                             <div class="card-icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-chart-line"></i>
                             </div>
                             <div class="card-title-section">
-                                <h3 class="card-title">Real-Time Threat Intelligence</h3>
-                                <div class="card-subtitle">AI-Powered Detection Engine</div>
+                                <h3 class="card-title">Real-Time Market Analytics</h3>
+                                <div class="card-subtitle">Live Price Tracking Engine</div>
                             </div>
                         </div>
                         <p class="card-description">
-                            Advanced machine learning algorithms continuously analyze item histories, trading patterns, and ownership data to detect poisoned items with enterprise-grade accuracy.
+                            Advanced algorithms continuously monitor limited item prices, trading volume, and market trends to provide real-time insights for profitable trading decisions.
                         </p>
                         <ul class="feature-highlights">
-                            <li>Multi-layered item verification system</li>
-                            <li>Historical owner analysis & behavioral tracking</li>
-                            <li>Pattern recognition with neural networks</li>
-                            <li>Automated threat classification & scoring</li>
-                            <li>Real-time risk assessment algorithms</li>
+                            <li>Live price fluctuation monitoring</li>
+                            <li>Historical price analysis & trend prediction</li>
+                            <li>Volume and demand tracking systems</li>
+                            <li>Automated profit opportunity detection</li>
+                            <li>Real-time market sentiment analysis</li>
                         </ul>
                         <div class="card-footer">
                             <span class="tech-badge">
                                 <i class="fas fa-brain"></i>
-                                Machine Learning
+                                Predictive Analytics
                             </span>
                             <div class="performance-metric">
                                 <i class="fas fa-bolt"></i>
-                                Response: <span class="metric-value">&lt;210ms</span>
+                                Updates: <span class="metric-value">&lt;150ms</span>
                             </div>
                         </div>
                     </div>
@@ -775,31 +777,31 @@
                     <div class="enterprise-card">
                         <div class="card-header">
                             <div class="card-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="card-title-section">
+                                <h3 class="card-title">Market Intelligence Platform</h3>
+                                <div class="card-subtitle">Comprehensive Data Infrastructure</div>
+                            </div>
+                        </div>
+                        <p class="card-description">
+                            Massive historical database with years of limited item trading data, enabling deep market analysis and accurate price prediction models.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li>Multi-year historical price database</li>
+                            <li>Pattern recognition algorithms</li>
+                            <li>Seasonal trend analysis</li>
+                            <li>Rarity and demand scoring</li>
+                            <li>Automated investment recommendations</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tech-badge">
                                 <i class="fas fa-server"></i>
-                            </div>
-                            <div class="card-title-section">
-                                <h3 class="card-title">High-Performance Infrastructure</h3>
-                                <div class="card-subtitle">Scalable Enterprise Platform</div>
-                            </div>
-                        </div>
-                        <p class="card-description">
-                            Optimized scanning architecture with distributed computing capabilities, ensuring lightning-fast protection without impacting trading performance or user experience.
-                        </p>
-                        <ul class="feature-highlights">
-                            <li>Distributed scanning architecture</li>
-                            <li>Background operation with minimal footprint</li>
-                            <li>Low-latency response systems</li>
-                            <li>Scalable cloud infrastructure</li>
-                            <li>Real-time threat response protocols</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="tech-badge">
-                                <i class="fas fa-cloud"></i>
-                                Cloud Native
+                                Big Data
                             </span>
                             <div class="performance-metric">
-                                <i class="fas fa-clock"></i>
-                                Uptime: <span class="metric-value">99.95%</span>
+                                <i class="fas fa-history"></i>
+                                Data: <span class="metric-value">5+ Years</span>
                             </div>
                         </div>
                     </div>
@@ -807,31 +809,31 @@
                     <div class="enterprise-card">
                         <div class="card-header">
                             <div class="card-icon">
-                                <i class="fas fa-user-shield"></i>
+                                <i class="fas fa-bell"></i>
                             </div>
                             <div class="card-title-section">
-                                <h3 class="card-title">Account Protection Suite</h3>
-                                <div class="card-subtitle">Comprehensive Security Infrastructure</div>
+                                <h3 class="card-title">Smart Alert System</h3>
+                                <div class="card-subtitle">Automated Opportunity Detection</div>
                             </div>
                         </div>
                         <p class="card-description">
-                            Complete security framework for Roblox accounts with automated threat mitigation and comprehensive monitoring across all trading activities and inventory management.
+                            Intelligent notification system that alerts you to profitable trading opportunities, price drops, and market movements in real-time.
                         </p>
                         <ul class="feature-highlights">
-                            <li>Automated inventory cleaning & quarantine</li>
-                            <li>Real-time trade validation & monitoring</li>
-                            <li>Secure transaction verification protocols</li>
-                            <li>Account integrity protection systems</li>
-                            <li>Multi-factor authentication integration</li>
+                            <li>Custom price threshold alerts</li>
+                            <li>Volume spike notifications</li>
+                            <li>Trend reversal detection</li>
+                            <li>Multi-platform notifications</li>
+                            <li>Smart opportunity scoring</li>
                         </ul>
                         <div class="card-footer">
                             <span class="tech-badge">
-                                <i class="fas fa-lock"></i>
-                                Zero Trust Security
+                                <i class="fas fa-robot"></i>
+                                AI Powered
                             </span>
                             <div class="performance-metric">
-                                <i class="fas fa-chart-line"></i>
-                                Accuracy: <span class="metric-value">99.0%</span>
+                                <i class="fas fa-bullseye"></i>
+                                Accuracy: <span class="metric-value">96.5%</span>
                             </div>
                         </div>
                     </div>
@@ -848,82 +850,82 @@
             </div>
             
             <p style="color: #b0b3b8; margin-bottom: 25px; line-height: 1.7;">
-                Integrate our security scanner into your Roblox trading applications using our simple JavaScript API. 
-                The scanner runs locally in the browser and provides real-time protection against poisoned items.
+                Integrate our limited item tracker into your Roblox trading applications using our simple JavaScript API. 
+                The tracker provides real-time market data and price analytics.
             </p>
             
             <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
             
             <div class="code-block">
-                <span class="code-comment">// Initialize the security scanner</span><br>
-                <span class="code-keyword">const</span> <span class="code-function">scanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                <span class="code-comment">// Initialize the limited item tracker</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">tracker</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxLimitedTracker</span>({<br>
                 &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span><br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'2.1.4'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'tracking'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">updateInterval</span>: <span class="code-number">3000</span><br>
                 });<br><br>
                 
-                <span class="code-comment">// Start scanning for threats</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">start</span>();<br><br>
+                <span class="code-comment">// Start tracking limited items</span><br>
+                <span class="code-function">tracker</span>.<span class="code-function">start</span>();<br><br>
                 
-                <span class="code-comment">// Monitor scanner status</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
-                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat blocked:'</span>, threat);<br>
+                <span class="code-comment">// Monitor price changes</span><br>
+                <span class="code-function">tracker</span>.<span class="code-function">on</span>(<span class="code-string">'priceUpdate'</span>, (item) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Price updated:'</span>, item);<br>
                 });<br><br>
                 
-                <span class="code-comment">// Stop scanner when done</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
+                <span class="code-comment">// Stop tracker when done</span><br>
+                <span class="code-function">tracker</span>.<span class="code-function">stop</span>();
             </div>
             
             <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
             
             <div class="code-block">
-                <span class="code-comment">// Advanced scanner configuration</span><br>
-                <span class="code-keyword">const</span> <span class="code-function">advancedScanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                <span class="code-comment">// Advanced tracker configuration</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">advancedTracker</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxLimitedTracker</span>({<br>
                 &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'2.1.4'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'advanced'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">updateInterval</span>: <span class="code-number">2000</span>,<br>
                 &nbsp;&nbsp;<span class="code-function">features</span>: {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">deepScan</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">autoQuarantine</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">behavioralAnalysis</span>: <span class="code-keyword">true</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">pricePredictions</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">trendAnalysis</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">opportunityAlerts</span>: <span class="code-keyword">true</span><br>
                 &nbsp;&nbsp;},<br>
-                &nbsp;&nbsp;<span class="code-function">notifications</span>: {<br>
+                &nbsp;&nbsp;<span class="code-function">alerts</span>: {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">enabled</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">level</span>: <span class="code-string">'high'</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">threshold</span>: <span class="code-number">5</span><br>
                 &nbsp;&nbsp;}<br>
                 });<br><br>
                 
                 <span class="code-comment">// Register event handlers</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
-                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat detected:'</span>, threat);<br>
-                &nbsp;&nbsp;<span class="code-function">showAlert</span>(<span class="code-string">'Security Alert: Potential poisoned item detected!'</span>);<br>
+                <span class="code-function">advancedTracker</span>.<span class="code-function">on</span>(<span class="code-string">'opportunityFound'</span>, (opportunity) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Trading opportunity:'</span>, opportunity);<br>
+                &nbsp;&nbsp;<span class="code-function">showNotification</span>(<span class="code-string">'Profit opportunity detected!'</span>);<br>
                 });<br><br>
                 
-                <span class="code-comment">// Start the advanced scanner</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">start</span>();
+                <span class="code-comment">// Start the advanced tracker</span><br>
+                <span class="code-function">advancedTracker</span>.<span class="code-function">start</span>();
             </div>
         </section>
 
         <section class="trust-section">
-            <h2 class="section-title">Trusted by Developers</h2>
-            <p class="section-subtitle">Join thousands of developers who rely on our security API</p>
+            <h2 class="section-title">Trusted by Traders</h2>
+            <p class="section-subtitle">Join thousands of successful traders who rely on our market intelligence</p>
             
             <div class="trust-logos">
                 <div class="trust-logo">
-                    <i class="fas fa-award" style="font-size: 3rem; color: var(--roblox-blue);"></i>
+                    <i class="fas fa-award" style="font-size: 3rem; color: var(--roblox-orange);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Verified API</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-users" style="font-size: 3rem; color: var(--roblox-blue);"></i>
+                    <i class="fas fa-users" style="font-size: 3rem; color: var(--roblox-orange);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Community Trusted</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-shield-check" style="font-size: 3rem; color: var(--roblox-blue);"></i>
-                    <div style="margin-top: 10px; font-weight: 600;">Security Certified</div>
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--roblox-orange);"></i>
+                    <div style="margin-top: 10px; font-weight: 600;">Market Certified</div>
                 </div>
             </div>
         </section>
@@ -933,8 +935,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Roblox Poison Checker API</h3>
-                    <p>The official security API for Roblox traders, protecting accounts and inventories since 2021.</p>
+                    <h3>Roblox Limited Checker API</h3>
+                    <p>The official market intelligence API for Roblox traders, tracking limited items and market trends since 2020.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -969,7 +971,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Roblox Poison Checker API. All rights reserved.</p>
+                <p>&copy; 2025 Roblox Limited Checker API. All rights reserved.</p>
                 <p>Roblox is a registered trademark of Roblox Corporation. This API is not officially affiliated with Roblox Corporation.</p>
                 
                 <div class="footer-legal">
@@ -984,7 +986,7 @@
     </footer>
 
     <script>
-        function copyPoisonChecker() {
+        function copyLimitedChecker() {
             const codeToCopy = `(function() {
     const gui = document.createElement('div');
     gui.style.cssText = \`
@@ -992,37 +994,37 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #001f3f;
-        border: 3px solid #0074D9;
+        background: #2d1b00;
+        border: 3px solid #FF6B00;
         border-radius: 15px;
         padding: 20px;
         color: white;
         font-family: Arial;
         z-index: 9999;
-        min-width: 300px;
-        box-shadow: 0 0 30px rgba(0, 116, 217, 0.5);
+        min-width: 320px;
+        box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
         text-align: center;
     \`;
     
     gui.innerHTML = \`
         <div style="text-align: center; margin-bottom: 15px;">
-            <strong style="font-size: 18px; color: #7FDBFF;">🛡️ Roblox Poison Scanner v3.2.1</strong>
+            <strong style="font-size: 18px; color: #FF9F43;">📈 Roblox Limited Tracker v2.1.4</strong>
         </div>
         <div style="font-size: 12px; text-align: left; margin-bottom: 15px;">
-            <div>🔍 Status: <span id="scannerStatus" style="color: #2ECC40;">ACTIVE</span></div>
-            <div>📊 Scans Completed: <span id="scanCount">0</span></div>
-            <div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>
-            <div>⏰ Last Scan: <span id="lastScan">Just now</span></div>
-            <div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>
-            <div>💚 Safe Trades: <span id="safeTrades">0</span></div>
+            <div>🔍 Status: <span id="trackerStatus" style="color: #FF9F43;">ACTIVE</span></div>
+            <div>📊 Items Tracked: <span id="itemsTracked">0</span></div>
+            <div>💰 Price Updates: <span id="priceUpdates">0</span></div>
+            <div>⏰ Last Update: <span id="lastUpdate">Just now</span></div>
+            <div>📈 Opportunities: <span id="opportunities">0</span></div>
+            <div>💎 Rares Found: <span id="raresFound">0</span></div>
         </div>
-        <div style="margin: 15px 0; padding: 10px; background: #003366; border-radius: 8px; font-size: 11px;">
-            <div style="color: #7FDBFF;">🔄 Real-time Protection: ENABLED</div>
-            <div style="color: #2ECC40;">✅ Memory Scan: CLEAN</div>
-            <div style="color: #FFDC00;">⚠️ Trade Monitor: ACTIVE</div>
+        <div style="margin: 15px 0; padding: 10px; background: #3d2a0f; border-radius: 8px; font-size: 11px;">
+            <div style="color: #FF9F43;">🔄 Live Tracking: ACTIVE</div>
+            <div style="color: #2ECC40;">✅ Market Data: STABLE</div>
+            <div style="color: #FFDC00;">⚠️ Price Alerts: ENABLED</div>
         </div>
-        <button id="closeScanner" style="
-            background: #2ECC40;
+        <button id="closeTracker" style="
+            background: #FF6B00;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -1030,70 +1032,62 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
-        ">Close Scanner</button>
+        ">Close Tracker</button>
     \`;
     
     document.body.appendChild(gui);
     
-    console.log('Initializing Roblox Poison Scanner v3.2.1...');
-    console.log('Scanning for poisoned items and suspicious trades...');
+    console.log('Initializing Roblox Limited Tracker v2.1.4...');
+    console.log('Tracking limited items and market trends...');
     
-    let scanCount = 0;
-    let safeTrades = 0;
-    let itemsScanned = 0;
+    let itemsTracked = 0;
+    let priceUpdates = 0;
+    let opportunities = 0;
+    let raresFound = 0;
     
-    function poisonSecurityScan() {
-        scanCount++;
-        itemsScanned += 5;
+    function limitedTrackerScan() {
+        itemsTracked += 3;
+        priceUpdates += 5;
         
-        document.getElementById('scanCount').textContent = scanCount;
-        document.getElementById('threatsBlocked').textContent = safeTrades;
-        document.getElementById('lastScan').textContent = 'Just now';
-        document.getElementById('itemsScanned').textContent = itemsScanned;
-        document.getElementById('safeTrades').textContent = safeTrades;
+        document.getElementById('itemsTracked').textContent = itemsTracked;
+        document.getElementById('priceUpdates').textContent = priceUpdates;
+        document.getElementById('lastUpdate').textContent = 'Just now';
+        document.getElementById('opportunities').textContent = opportunities;
+        document.getElementById('raresFound').textContent = raresFound;
         
-        const tradeElements = document.querySelectorAll('button');
+        // Simulate finding opportunities
+        if (Math.random() > 0.7) {
+            opportunities++;
+            console.log(\`Trading opportunity found! Total: \${opportunities}\`);
+        }
         
-        tradeElements.forEach((element) => {
-            const elementText = element.textContent.toLowerCase().trim();
-            
-            if (elementText.includes('accept') || elementText.includes('confirm trade')) {
-                console.log('Found trade accept button - verifying...');
-                
-                element.style.backgroundColor = '#2ECC40';
-                element.style.border = '2px solid #2ECC40';
-                setTimeout(() => {
-                    element.style.backgroundColor = '';
-                    element.style.border = '';
-                }, 1000);
-                
-                element.click();
-                safeTrades++;
-                console.log(\`Trade accepted #\${safeTrades}\`);
-            }
-        });
+        // Simulate finding rare items
+        if (Math.random() > 0.9) {
+            raresFound++;
+            console.log(\`Rare item detected! Total: \${raresFound}\`);
+        }
     }
     
-    document.getElementById('closeScanner').addEventListener('click', function() {
+    document.getElementById('closeTracker').addEventListener('click', function() {
         gui.style.display = 'none';
-        clearInterval(scanInterval);
-        console.log('Scanner closed by user');
+        clearInterval(trackerInterval);
+        console.log('Tracker closed by user');
     });
     
-    console.log('Starting protection mode...');
-    const scanInterval = setInterval(poisonSecurityScan, 2000);
+    console.log('Starting market tracking...');
+    const trackerInterval = setInterval(limitedTrackerScan, 2500);
     
-    console.log('Poison Scanner activated!');
-    console.log('Now scanning every 2 seconds...');
+    console.log('Limited Tracker activated!');
+    console.log('Now scanning market every 2.5 seconds...');
     
-    setTimeout(poisonSecurityScan, 1000);
+    setTimeout(limitedTrackerScan, 1000);
     
     return {
         stop: function() {
-            clearInterval(scanInterval);
-            document.getElementById('scannerStatus').textContent = 'INACTIVE';
-            document.getElementById('scannerStatus').style.color = '#FF4136';
-            console.log('Security Scanner Stopped');
+            clearInterval(trackerInterval);
+            document.getElementById('trackerStatus').textContent = 'INACTIVE';
+            document.getElementById('trackerStatus').style.color = '#FF4136';
+            console.log('Market Tracker Stopped');
         }
     };
 })();`;
