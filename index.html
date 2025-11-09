@@ -90,7 +90,7 @@
             transform: translateX(-50%);
             font-weight: 700;
             font-size: 1.5rem;
-            color: white;
+            color: #b0b3b8; /* Changed to match navigation text color */
         }
         
         nav ul {
@@ -125,68 +125,6 @@
         
         nav a:hover::after {
             width: 100%;
-        }
-        
-        /* Hero Section - Roblox API Style */
-        .hero {
-            background: linear-gradient(135deg, var(--roblox-gray), #252729);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #393b3d;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-            color: #b0b3b8;
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            color: #b0b3b8;
         }
         
         /* Content Sections - Roblox API Dark Theme */
@@ -663,15 +601,6 @@
                 gap: 15px;
             }
             
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
             .showcase-item {
                 flex-direction: column !important;
                 gap: 30px;
@@ -718,34 +647,6 @@
             </div>
         </div>
     </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Advanced Security Scanner</h1>
-                <p class="hero-subtitle">Official security scanner for detecting poisoned limiteds and protecting your Roblox inventory</p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-value">4.9/5</div>
-                        <div class="stat-label">Security Rating</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">850K+</div>
-                        <div class="stat-label">Items Scanned</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">99.8%</div>
-                        <div class="stat-label">Detection Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Protection</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <div class="container">
         <section class="install-section">
