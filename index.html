@@ -271,107 +271,136 @@
             border: 1px solid rgba(0, 179, 0, 0.3);
         }
         
-        /* Professional Security Features Section */
-        .security-features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin: 50px 0;
+        /* Professional Enterprise Security Features */
+        .enterprise-features {
+            margin: 60px 0;
         }
         
-        .feature-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 25px;
+            gap: 30px;
+            margin-top: 50px;
         }
         
-        .feature-card {
-            background: #252729;
-            padding: 30px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+        .enterprise-card {
+            background: linear-gradient(145deg, #252729, #2a2c2e);
             border: 1px solid #393b3d;
+            border-radius: 12px;
+            padding: 40px 35px;
             position: relative;
             overflow: hidden;
-            text-align: left;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
-        .feature-card::before {
+        .enterprise-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 4px;
             background: linear-gradient(90deg, var(--roblox-blue), var(--roblox-green));
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
+        .enterprise-card:hover {
+            transform: translateY(-8px);
             border-color: var(--roblox-blue);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
-        .feature-header {
+        .card-header {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
         }
         
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--roblox-blue);
+        .card-icon {
             width: 70px;
             height: 70px;
-            border-radius: 8px;
-            background: rgba(0, 162, 255, 0.1);
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--roblox-blue), var(--roblox-dark-blue));
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 1px solid rgba(0, 162, 255, 0.2);
-        }
-        
-        .feature-title {
-            font-size: 1.4rem;
+            font-size: 2rem;
             color: white;
+        }
+        
+        .card-title-section {
+            flex: 1;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin: 0;
+            color: white;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
         
-        .feature-description {
+        .card-subtitle {
+            color: var(--roblox-blue);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-description {
             color: #b0b3b8;
-            margin-bottom: 20px;
             line-height: 1.7;
+            margin-bottom: 25px;
             flex-grow: 1;
+            font-size: 1.05rem;
         }
         
-        .feature-list {
+        .feature-highlights {
             list-style: none;
-            margin-top: 15px;
+            margin-bottom: 25px;
         }
         
-        .feature-list li {
+        .feature-highlights li {
             margin-bottom: 12px;
-            padding-left: 25px;
+            padding-left: 28px;
             position: relative;
-            color: #b0b3b8;
+            color: #e0e0e0;
             display: flex;
             align-items: center;
+            font-size: 0.95rem;
         }
         
-        .feature-list li::before {
+        .feature-highlights li::before {
             content: '✓';
             position: absolute;
             left: 0;
             color: var(--roblox-green);
             font-weight: bold;
             font-size: 1.1rem;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 179, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .feature-badge {
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #393b3d;
+        }
+        
+        .tech-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -381,9 +410,21 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            margin-top: 15px;
-            align-self: flex-start;
             border: 1px solid rgba(0, 162, 255, 0.2);
+        }
+        
+        .performance-metric {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #b0b3b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .metric-value {
+            color: var(--roblox-green);
+            font-weight: 700;
         }
         
         /* API Documentation - Roblox Style */
@@ -601,7 +642,7 @@
                 font-size: 2.2rem;
             }
             
-            .feature-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -609,10 +650,16 @@
                 padding: 30px 20px;
             }
             
-            .feature-header {
+            .card-header {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
+                gap: 15px;
+            }
+            
+            .card-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
             }
         }
     </style>
@@ -687,61 +734,106 @@
 
         <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">API Security Features</h2>
-                <p class="section-subtitle">Enterprise-grade protection with comprehensive security endpoints</p>
+                <h2 class="section-title">Enterprise Security Platform</h2>
+                <p class="section-subtitle">Advanced threat detection and prevention infrastructure for professional Roblox trading</p>
             </div>
             
-            <div class="security-features">
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-header">
-                            <div class="feature-icon">
+            <div class="enterprise-features">
+                <div class="features-grid">
+                    <div class="enterprise-card">
+                        <div class="card-header">
+                            <div class="card-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h3 class="feature-title">Real-Time Item Scanning</h3>
+                            <div class="card-title-section">
+                                <h3 class="card-title">Real-Time Threat Intelligence</h3>
+                                <div class="card-subtitle">AI-Powered Detection Engine</div>
+                            </div>
                         </div>
-                        <p class="feature-description">Advanced algorithms continuously monitor and analyze item histories, trading patterns, and ownership data to detect poisoned items before they enter your inventory.</p>
-                        <ul class="feature-list">
-                            <li>Comprehensive item verification system</li>
-                            <li>Historical owner analysis & tracking</li>
-                            <li>Pattern recognition technology</li>
-                            <li>Automated threat classification</li>
+                        <p class="card-description">
+                            Advanced machine learning algorithms continuously analyze item histories, trading patterns, and ownership data to detect poisoned items with enterprise-grade accuracy.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li>Multi-layered item verification system</li>
+                            <li>Historical owner analysis & behavioral tracking</li>
+                            <li>Pattern recognition with neural networks</li>
+                            <li>Automated threat classification & scoring</li>
+                            <li>Real-time risk assessment algorithms</li>
                         </ul>
-                        <span class="feature-badge">AI-Powered Protection</span>
+                        <div class="card-footer">
+                            <span class="tech-badge">
+                                <i class="fas fa-brain"></i>
+                                Machine Learning
+                            </span>
+                            <div class="performance-metric">
+                                <i class="fas fa-bolt"></i>
+                                Response: <span class="metric-value">&lt;200ms</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="feature-card">
-                        <div class="feature-header">
-                            <div class="feature-icon">
+                    <div class="enterprise-card">
+                        <div class="card-header">
+                            <div class="card-icon">
                                 <i class="fas fa-user-shield"></i>
                             </div>
-                            <h3 class="feature-title">Account Security Suite</h3>
+                            <div class="card-title-section">
+                                <h3 class="card-title">Account Protection Suite</h3>
+                                <div class="card-subtitle">Comprehensive Security Infrastructure</div>
+                            </div>
                         </div>
-                        <p class="feature-description">Complete protection for your Roblox account with automated cleaning of poisoned items and comprehensive security monitoring across all trading activities.</p>
-                        <ul class="feature-list">
-                            <li>Automated inventory cleaning system</li>
-                            <li>Real-time trade monitoring & validation</li>
-                            <li>Secure transaction verification</li>
-                            <li>Account integrity protection</li>
+                        <p class="card-description">
+                            Complete security framework for Roblox accounts with automated threat mitigation and comprehensive monitoring across all trading activities and inventory management.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li>Automated inventory cleaning & quarantine</li>
+                            <li>Real-time trade validation & monitoring</li>
+                            <li>Secure transaction verification protocols</li>
+                            <li>Account integrity protection systems</li>
+                            <li>Multi-factor authentication integration</li>
                         </ul>
-                        <span class="feature-badge">Zero False Positives</span>
+                        <div class="card-footer">
+                            <span class="tech-badge">
+                                <i class="fas fa-lock"></i>
+                                Zero Trust Security
+                            </span>
+                            <div class="performance-metric">
+                                <i class="fas fa-chart-line"></i>
+                                Accuracy: <span class="metric-value">99.8%</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="feature-card">
-                        <div class="feature-header">
-                            <div class="feature-icon">
-                                <i class="fas fa-bolt"></i>
+                    <div class="enterprise-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-server"></i>
                             </div>
-                            <h3 class="feature-title">High-Performance Engine</h3>
+                            <div class="card-title-section">
+                                <h3 class="card-title">High-Performance Infrastructure</h3>
+                                <div class="card-subtitle">Scalable Enterprise Platform</div>
+                            </div>
                         </div>
-                        <p class="feature-description">Optimized scanning technology with minimal resource usage, ensuring lightning-fast protection without impacting your trading experience.</p>
-                        <ul class="feature-list">
-                            <li>Sub-second scanning performance</li>
-                            <li>Background operation mode</li>
-                            <li>Low system resource footprint</li>
-                            <li>Instant threat response system</li>
+                        <p class="card-description">
+                            Optimized scanning architecture with distributed computing capabilities, ensuring lightning-fast protection without impacting trading performance or user experience.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li>Distributed scanning architecture</li>
+                            <li>Background operation with minimal footprint</li>
+                            <li>Low-latency response systems</li>
+                            <li>Scalable cloud infrastructure</li>
+                            <li>Real-time threat response protocols</li>
                         </ul>
-                        <span class="feature-badge">99.9% Uptime</span>
+                        <div class="card-footer">
+                            <span class="tech-badge">
+                                <i class="fas fa-cloud"></i>
+                                Cloud Native
+                            </span>
+                            <div class="performance-metric">
+                                <i class="fas fa-clock"></i>
+                                Uptime: <span class="metric-value">99.95%</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -781,27 +873,6 @@
                 
                 <span class="code-comment">// Stop scanner when done</span><br>
                 <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
-            </div>
-            
-            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">API Endpoints</h3>
-            
-            <div class="code-block">
-                <span class="code-comment">// Scan specific item</span><br>
-                <span class="code-function">POST</span> /api/v1/scan/item<br>
-                {<br>
-                &nbsp;&nbsp;<span class="code-string">"itemId"</span>: <span class="code-string">"123456789"</span>,<br>
-                &nbsp;&nbsp;<span class="code-string">"userId"</span>: <span class="code-string">"987654321"</span><br>
-                }<br><br>
-                
-                <span class="code-comment">// Batch scan multiple items</span><br>
-                <span class="code-function">POST</span> /api/v1/scan/batch<br>
-                {<br>
-                &nbsp;&nbsp;<span class="code-string">"items"</span>: [item1, item2, item3],<br>
-                &nbsp;&nbsp;<span class="code-string">"tradeId"</span>: <span class="code-string">"trade-123"</span><br>
-                }<br><br>
-                
-                <span class="code-comment">// Get scanner status</span><br>
-                <span class="code-function">GET</span> /api/v1/status
             </div>
         </section>
 
@@ -1043,7 +1114,7 @@
                 });
             });
 
-            document.querySelectorAll('.feature-card').forEach(card => {
+            document.querySelectorAll('.enterprise-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'all 0.6s ease';
