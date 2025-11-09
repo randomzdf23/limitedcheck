@@ -27,8 +27,8 @@
         
         body {
             font-family: 'Source Sans Pro', Arial, sans-serif;
-            background-color: var(--roblox-light-gray);
-            color: #232527;
+            background-color: var(--roblox-dark);
+            color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -39,10 +39,10 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - Roblox API Style */
         header {
-            background: var(--roblox-white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            background: var(--roblox-gray);
+            border-bottom: 1px solid #393b3d;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -61,7 +61,7 @@
             gap: 12px;
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--roblox-dark);
+            color: white;
         }
         
         .logo-icon {
@@ -74,7 +74,6 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 162, 255, 0.3);
         }
         
         nav ul {
@@ -84,7 +83,7 @@
         }
         
         nav a {
-            color: var(--roblox-dark);
+            color: #b0b3b8;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -93,7 +92,7 @@
         }
         
         nav a:hover {
-            color: var(--roblox-blue);
+            color: white;
         }
         
         nav a::after {
@@ -111,25 +110,15 @@
             width: 100%;
         }
         
-        /* Hero Section */
+        /* Hero Section - Roblox API Style */
         .hero {
-            background: linear-gradient(135deg, var(--roblox-blue), var(--roblox-dark-blue));
+            background: linear-gradient(135deg, var(--roblox-gray), #252729);
             color: white;
             padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
+            border-bottom: 1px solid #393b3d;
         }
         
         .hero-content {
@@ -143,15 +132,18 @@
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, var(--roblox-blue), #7FDBFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero-subtitle {
             font-size: 1.3rem;
-            opacity: 0.95;
+            opacity: 0.9;
             max-width: 700px;
             margin: 0 auto 40px;
             font-weight: 400;
+            color: #b0b3b8;
         }
         
         .hero-stats {
@@ -171,21 +163,22 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
+            color: var(--roblox-blue);
         }
         
         .stat-label {
             font-size: 0.9rem;
             opacity: 0.9;
+            color: #b0b3b8;
         }
         
-        /* Content Sections */
+        /* Content Sections - Roblox API Dark Theme */
         .content-section {
-            background: var(--roblox-white);
-            border-radius: 12px;
-            padding: 50px;
+            background: var(--roblox-gray);
+            border-radius: 8px;
+            padding: 40px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e9ecef;
+            border: 1px solid #393b3d;
         }
         
         .section-header {
@@ -196,7 +189,7 @@
         .section-title {
             font-size: 2.2rem;
             margin-bottom: 15px;
-            color: var(--roblox-dark);
+            color: white;
             font-weight: 700;
         }
         
@@ -204,7 +197,7 @@
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
-            color: #5c6166;
+            color: #b0b3b8;
             font-weight: 400;
         }
         
@@ -212,11 +205,12 @@
         .install-section {
             text-align: center;
             padding: 50px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 12px;
+            background: #252729;
+            border-radius: 8px;
             margin: 50px 0;
             position: relative;
             overflow: hidden;
+            border: 1px solid #393b3d;
         }
         
         .install-section::before {
@@ -232,14 +226,14 @@
         .install-title {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--roblox-dark);
+            color: white;
         }
         
         .install-description {
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto 30px;
-            color: #5c6166;
+            color: #b0b3b8;
         }
         
         .install-btn {
@@ -248,12 +242,11 @@
             border: none;
             padding: 18px 45px;
             font-size: 1.3rem;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             margin: 20px 0;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 162, 255, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -261,44 +254,43 @@
         
         .install-btn:hover {
             background: var(--roblox-dark-blue);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 162, 255, 0.4);
+            transform: translateY(-2px);
         }
         
         .security-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 179, 0, 0.1);
+            background: rgba(0, 179, 0, 0.2);
             color: var(--roblox-green);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-top: 15px;
+            border: 1px solid rgba(0, 179, 0, 0.3);
         }
         
         /* Professional Security Features Section */
         .security-features {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 30px;
             margin: 50px 0;
         }
         
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
         }
         
         .feature-card {
-            background: var(--roblox-white);
-            padding: 35px 30px;
-            border-radius: 12px;
+            background: #252729;
+            padding: 30px;
+            border-radius: 8px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e9ecef;
+            border: 1px solid #393b3d;
             position: relative;
             overflow: hidden;
             text-align: left;
@@ -318,7 +310,7 @@
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--roblox-blue);
         }
         
         .feature-header {
@@ -333,23 +325,24 @@
             color: var(--roblox-blue);
             width: 70px;
             height: 70px;
-            border-radius: 12px;
+            border-radius: 8px;
             background: rgba(0, 162, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            border: 1px solid rgba(0, 162, 255, 0.2);
         }
         
         .feature-title {
             font-size: 1.4rem;
-            color: var(--roblox-dark);
+            color: white;
             font-weight: 700;
             margin: 0;
         }
         
         .feature-description {
-            color: #5c6166;
+            color: #b0b3b8;
             margin-bottom: 20px;
             line-height: 1.7;
             flex-grow: 1;
@@ -364,7 +357,7 @@
             margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
-            color: #5c6166;
+            color: #b0b3b8;
             display: flex;
             align-items: center;
         }
@@ -382,7 +375,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #f0f8ff;
+            background: rgba(0, 162, 255, 0.1);
             color: var(--roblox-blue);
             padding: 6px 12px;
             border-radius: 20px;
@@ -390,70 +383,77 @@
             font-weight: 600;
             margin-top: 15px;
             align-self: flex-start;
+            border: 1px solid rgba(0, 162, 255, 0.2);
         }
         
-        /* How It Works */
-        .steps {
-            display: flex;
-            justify-content: space-between;
+        /* API Documentation - Roblox Style */
+        .api-section {
+            background: #252729;
+            border-radius: 8px;
+            padding: 40px;
             margin: 50px 0;
-            position: relative;
+            border: 1px solid #393b3d;
         }
         
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: #e9ecef;
-            z-index: 1;
-        }
-        
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            padding: 0 15px;
-        }
-        
-        .step-number {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--roblox-blue);
-            color: white;
+        .api-header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .api-icon {
+            font-size: 2rem;
+            color: var(--roblox-blue);
+        }
+        
+        .api-title {
             font-size: 1.8rem;
+            color: white;
             font-weight: 700;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 10px rgba(0, 162, 255, 0.3);
         }
         
-        .step-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--roblox-dark);
-        }
-        
-        .step-description {
-            color: #5c6166;
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             font-size: 0.95rem;
+            overflow-x: auto;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+        
+        .code-comment {
+            color: #6a9955;
+        }
+        
+        .code-keyword {
+            color: #569cd6;
+        }
+        
+        .code-string {
+            color: #ce9178;
+        }
+        
+        .code-number {
+            color: #b5cea8;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
         }
         
         /* Trust Indicators */
         .trust-section {
-            background: var(--roblox-white);
-            border-radius: 12px;
+            background: #252729;
+            border-radius: 8px;
             padding: 50px;
             margin: 50px 0;
             text-align: center;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #393b3d;
         }
         
         .trust-logos {
@@ -476,10 +476,11 @@
         
         /* Footer */
         footer {
-            background: var(--roblox-dark);
-            color: white;
+            background: #191a1c;
+            color: #b0b3b8;
             padding: 60px 0 30px;
             margin-top: 80px;
+            border-top: 1px solid #393b3d;
         }
         
         .footer-content {
@@ -516,8 +517,8 @@
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #3a3d42;
-            color: #b0b3b8;
+            border-top: 1px solid #393b3d;
+            color: #8a8d90;
             font-size: 0.9rem;
         }
         
@@ -529,13 +530,13 @@
         }
         
         .footer-legal a {
-            color: #b0b3b8;
+            color: #8a8d90;
             text-decoration: none;
             transition: color 0.2s;
         }
         
         .footer-legal a:hover {
-            color: white;
+            color: #b0b3b8;
         }
         
         /* Success notification */
@@ -546,15 +547,15 @@
             background: var(--roblox-green);
             color: white;
             padding: 15px 25px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-family: Arial, sans-serif;
             font-weight: bold;
             z-index: 10000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             animation: slideIn 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
+            border: 1px solid rgba(0, 179, 0, 0.3);
         }
         
         @keyframes slideIn {
@@ -569,7 +570,7 @@
         
         /* Warning Box */
         .warning-box {
-            background: #fff8e6;
+            background: rgba(255, 170, 0, 0.1);
             border-left: 4px solid var(--roblox-yellow);
             padding: 20px;
             margin: 20px 0;
@@ -577,6 +578,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            border: 1px solid rgba(255, 170, 0, 0.2);
         }
         
         /* Responsive */
@@ -603,16 +605,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .steps {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .steps::before {
-                display: none;
-            }
-            
-            .content-section, .install-section {
+            .content-section, .install-section, .api-section {
                 padding: 30px 20px;
             }
             
@@ -638,7 +631,6 @@
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Documentation</a></li>
                         <li><a href="#">Support</a></li>
-                        <li><a href="#">Blog</a></li>
                     </ul>
                 </nav>
             </div>
@@ -649,24 +641,24 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Roblox Poison Checker</h1>
-                <p class="hero-subtitle">The official security tool for Roblox traders. Advanced detection and prevention of poisoned items to protect your account and inventory.</p>
+                <p class="hero-subtitle">Official security API for detecting and preventing poisoned items in Roblox trades</p>
                 
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-value">4.8/5</div>
-                        <div class="stat-label">User Rating</div>
+                        <div class="stat-label">API Rating</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-value">400K+</div>
-                        <div class="stat-label">Items Cleaned</div>
+                        <div class="stat-label">Items Scanned</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-value">99.8%</div>
-                        <div class="stat-label">Detection Rate</div>
+                        <div class="stat-label">Accuracy</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-value">24/7</div>
-                        <div class="stat-label">Protection</div>
+                        <div class="stat-label">Uptime</div>
                     </div>
                 </div>
             </div>
@@ -675,28 +667,28 @@
 
     <div class="container">
         <section class="install-section">
-            <h2 class="install-title">Get Protected in Seconds</h2>
-            <p class="install-description">Our advanced security scanner detects and prevents poisoned items from entering your inventory. Simple, fast, and reliable protection.</p>
+            <h2 class="install-title">Get Started with Our API</h2>
+            <p class="install-description">Integrate our security scanner directly into your Roblox trading applications</p>
             
             <button class="install-btn" onclick="copyPoisonChecker()">
-                <i class="fas fa-shield-alt"></i>
-                Copy Security Script
+                <i class="fas fa-code"></i>
+                Copy API Script
             </button>
             
             <div class="security-badge">
-                <i class="fas fa-check-circle"></i>
-                Official Roblox Verified Tool
+                <i class="fas fa-shield-check"></i>
+                Official Roblox Verified API
             </div>
             
             <div class="warning-box">
-                <strong>Security Notice:</strong> Only use scripts from this official website. Never paste passwords or sensitive information into the browser console. Report any impersonators to our security team.
+                <strong>Security Notice:</strong> Only use scripts from this official domain. Never expose API keys or sensitive credentials in client-side code.
             </div>
         </section>
 
         <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Advanced Security Features</h2>
-                <p class="section-subtitle">Enterprise-grade protection with multi-layered security architecture</p>
+                <h2 class="section-title">API Security Features</h2>
+                <p class="section-subtitle">Enterprise-grade protection with comprehensive security endpoints</p>
             </div>
             
             <div class="security-features">
@@ -706,7 +698,7 @@
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h3 class="feature-title">Real-Time Threat Detection</h3>
+                            <h3 class="feature-title">Real-Time Item Scanning</h3>
                         </div>
                         <p class="feature-description">Advanced algorithms continuously monitor and analyze item histories, trading patterns, and ownership data to detect poisoned items before they enter your inventory.</p>
                         <ul class="feature-list">
@@ -755,47 +747,72 @@
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Get protected in just a few simple steps</p>
+        <section class="api-section">
+            <div class="api-header">
+                <div class="api-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="api-title">API Documentation</h2>
             </div>
             
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Copy Script</h3>
-                    <p class="step-description">Click the button to copy our security script to your clipboard</p>
-                </div>
+            <p style="color: #b0b3b8; margin-bottom: 25px; line-height: 1.7;">
+                Integrate our security scanner into your Roblox trading applications using our simple JavaScript API. 
+                The scanner runs locally in the browser and provides real-time protection against poisoned items.
+            </p>
+            
+            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
+            
+            <div class="code-block">
+                <span class="code-comment">// Initialize the security scanner</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">scanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span><br>
+                });<br><br>
                 
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Open Console</h3>
-                    <p class="step-description">Press F12 in Roblox to open the browser developer console</p>
-                </div>
+                <span class="code-comment">// Start scanning for threats</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">start</span>();<br><br>
                 
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Paste & Run</h3>
-                    <p class="step-description">Paste the script into the console and press Enter to activate</p>
-                </div>
+                <span class="code-comment">// Monitor scanner status</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat blocked:'</span>, threat);<br>
+                });<br><br>
                 
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Stay Protected</h3>
-                    <p class="step-description">The scanner will automatically protect all your trades</p>
-                </div>
+                <span class="code-comment">// Stop scanner when done</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
+            </div>
+            
+            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">API Endpoints</h3>
+            
+            <div class="code-block">
+                <span class="code-comment">// Scan specific item</span><br>
+                <span class="code-function">POST</span> /api/v1/scan/item<br>
+                {<br>
+                &nbsp;&nbsp;<span class="code-string">"itemId"</span>: <span class="code-string">"123456789"</span>,<br>
+                &nbsp;&nbsp;<span class="code-string">"userId"</span>: <span class="code-string">"987654321"</span><br>
+                }<br><br>
+                
+                <span class="code-comment">// Batch scan multiple items</span><br>
+                <span class="code-function">POST</span> /api/v1/scan/batch<br>
+                {<br>
+                &nbsp;&nbsp;<span class="code-string">"items"</span>: [item1, item2, item3],<br>
+                &nbsp;&nbsp;<span class="code-string">"tradeId"</span>: <span class="code-string">"trade-123"</span><br>
+                }<br><br>
+                
+                <span class="code-comment">// Get scanner status</span><br>
+                <span class="code-function">GET</span> /api/v1/status
             </div>
         </section>
 
         <section class="trust-section">
-            <h2 class="section-title">Trusted by the Community</h2>
-            <p class="section-subtitle">Join thousands of professional Roblox traders who rely on our security tools</p>
+            <h2 class="section-title">Trusted by Developers</h2>
+            <p class="section-subtitle">Join thousands of developers who rely on our security API</p>
             
             <div class="trust-logos">
                 <div class="trust-logo">
                     <i class="fas fa-award" style="font-size: 3rem; color: var(--roblox-blue);"></i>
-                    <div style="margin-top: 10px; font-weight: 600;">Verified Tool</div>
+                    <div style="margin-top: 10px; font-weight: 600;">Verified API</div>
                 </div>
                 
                 <div class="trust-logo">
@@ -815,8 +832,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Roblox Poison Checker</h3>
-                    <p>The official security tool for Roblox traders, protecting accounts and inventories since 2021.</p>
+                    <h3>Roblox Poison Checker API</h3>
+                    <p>The official security API for Roblox traders, protecting accounts and inventories since 2021.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -851,8 +868,8 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Roblox Poison Checker. All rights reserved.</p>
-                <p>Roblox is a registered trademark of Roblox Corporation. This tool is not officially affiliated with Roblox Corporation.</p>
+                <p>&copy; 2025 Roblox Poison Checker API. All rights reserved.</p>
+                <p>Roblox is a registered trademark of Roblox Corporation. This API is not officially affiliated with Roblox Corporation.</p>
                 
                 <div class="footer-legal">
                     <a href="#">Terms</a>
@@ -1000,7 +1017,7 @@
             // Create a temporary success message
             const successMsg = document.createElement('div');
             successMsg.className = 'copy-success';
-            successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Security script copied to clipboard!';
+            successMsg.innerHTML = '<i class="fas fa-check-circle"></i> API script copied to clipboard!';
             
             document.body.appendChild(successMsg);
             
