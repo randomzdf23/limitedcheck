@@ -111,26 +111,6 @@
             width: 100%;
         }
         
-        .header-actions {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--roblox-blue);
-            border: 1px solid var(--roblox-blue);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(0, 162, 255, 0.05);
-        }
-        
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--roblox-blue), var(--roblox-dark-blue));
@@ -298,24 +278,32 @@
             margin-top: 15px;
         }
         
-        /* Features Section */
-        .features {
+        /* Professional Security Features Section */
+        .security-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            margin: 50px 0;
         }
         
         .feature-card {
             background: var(--roblox-white);
-            padding: 40px 30px;
+            padding: 35px 30px;
             border-radius: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid #e9ecef;
             position: relative;
             overflow: hidden;
-            text-align: center;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
         }
         
         .feature-card::before {
@@ -329,49 +317,56 @@
         }
         
         .feature-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
         }
         
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
             color: var(--roblox-blue);
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
             background: rgba(0, 162, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            flex-shrink: 0;
         }
         
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .feature-title {
+            font-size: 1.4rem;
             color: var(--roblox-dark);
             font-weight: 700;
+            margin: 0;
         }
         
-        .feature-card p {
+        .feature-description {
             color: #5c6166;
             margin-bottom: 20px;
             line-height: 1.7;
+            flex-grow: 1;
         }
         
         .feature-list {
             list-style: none;
-            margin-top: 20px;
-            text-align: left;
+            margin-top: 15px;
         }
         
         .feature-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
             color: #5c6166;
+            display: flex;
+            align-items: center;
         }
         
         .feature-list li::before {
@@ -380,6 +375,21 @@
             left: 0;
             color: var(--roblox-green);
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f8ff;
+            color: var(--roblox-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+            align-self: flex-start;
         }
         
         /* How It Works */
@@ -589,7 +599,7 @@
                 font-size: 2.2rem;
             }
             
-            .features {
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -604,6 +614,12 @@
             
             .content-section, .install-section {
                 padding: 30px 20px;
+            }
+            
+            .feature-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
             }
         }
     </style>
@@ -625,9 +641,6 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="btn-secondary">Sign In</button>
-                </div>
             </div>
         </div>
     </header>
@@ -683,50 +696,61 @@
         <section class="content-section">
             <div class="section-header">
                 <h2 class="section-title">Advanced Security Features</h2>
-                <p class="section-subtitle">Comprehensive protection for your Roblox trading activities with multiple layers of security</p>
+                <p class="section-subtitle">Enterprise-grade protection with multi-layered security architecture</p>
             </div>
             
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+            <div class="security-features">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Real-Time Threat Detection</h3>
+                        </div>
+                        <p class="feature-description">Advanced algorithms continuously monitor and analyze item histories, trading patterns, and ownership data to detect poisoned items before they enter your inventory.</p>
+                        <ul class="feature-list">
+                            <li>Comprehensive item verification system</li>
+                            <li>Historical owner analysis & tracking</li>
+                            <li>Pattern recognition technology</li>
+                            <li>Automated threat classification</li>
+                        </ul>
+                        <span class="feature-badge">AI-Powered Protection</span>
                     </div>
-                    <h3>Real-Time Item Scanning</h3>
-                    <p>Advanced algorithms analyze item histories and trading patterns to detect poisoned items before they enter your inventory.</p>
-                    <ul class="feature-list">
-                        <li>Comprehensive item verification</li>
-                        <li>Historical owner analysis</li>
-                        <li>Pattern recognition technology</li>
-                        <li>Automated threat detection</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-shield"></i>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h3 class="feature-title">Account Security Suite</h3>
+                        </div>
+                        <p class="feature-description">Complete protection for your Roblox account with automated cleaning of poisoned items and comprehensive security monitoring across all trading activities.</p>
+                        <ul class="feature-list">
+                            <li>Automated inventory cleaning system</li>
+                            <li>Real-time trade monitoring & validation</li>
+                            <li>Secure transaction verification</li>
+                            <li>Account integrity protection</li>
+                        </ul>
+                        <span class="feature-badge">Zero False Positives</span>
                     </div>
-                    <h3>Account Protection</h3>
-                    <p>Complete security for your Roblox account with automated cleaning of poisoned and inactive limited items.</p>
-                    <ul class="feature-list">
-                        <li>Automated inventory cleaning</li>
-                        <li>Real-time trade monitoring</li>
-                        <li>Secure transaction validation</li>
-                        <li>Account integrity verification</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="feature-title">High-Performance Engine</h3>
+                        </div>
+                        <p class="feature-description">Optimized scanning technology with minimal resource usage, ensuring lightning-fast protection without impacting your trading experience.</p>
+                        <ul class="feature-list">
+                            <li>Sub-second scanning performance</li>
+                            <li>Background operation mode</li>
+                            <li>Low system resource footprint</li>
+                            <li>Instant threat response system</li>
+                        </ul>
+                        <span class="feature-badge">99.9% Uptime</span>
                     </div>
-                    <h3>High-Performance Engine</h3>
-                    <p>Lightning-fast scanning with minimal resource usage. Our optimized algorithms ensure seamless trading experience.</p>
-                    <ul class="feature-list">
-                        <li>Sub-second scanning speed</li>
-                        <li>Background operation mode</li>
-                        <li>Low system resource usage</li>
-                        <li>Instant threat response</li>
-                    </ul>
                 </div>
             </div>
         </section>
