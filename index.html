@@ -54,6 +54,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            position: relative;
         }
         
         .logo {
@@ -81,6 +82,15 @@
             background-repeat: no-repeat;
             background-position: center;
             filter: brightness(0) invert(1); /* Makes the logo white */
+        }
+        
+        .header-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
         }
         
         nav ul {
@@ -642,6 +652,13 @@
                 gap: 15px;
             }
             
+            .header-title {
+                position: static;
+                transform: none;
+                order: -1;
+                margin-bottom: 10px;
+            }
+            
             nav ul {
                 gap: 15px;
             }
@@ -688,8 +705,8 @@
                     <div class="logo-icon">
                         <div class="roblox-logo"></div>
                     </div>
-                    <span>Limited Checker</span>
                 </div>
+                <div class="header-title">Limited Checker</div>
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -705,7 +722,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Limited Checker</h1>
+                <h1>Advanced Security Scanner</h1>
                 <p class="hero-subtitle">Official security scanner for detecting poisoned limiteds and protecting your Roblox inventory</p>
                 
                 <div class="hero-stats">
