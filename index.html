@@ -273,160 +273,166 @@
             border: 1px solid rgba(255, 107, 0, 0.3);
         }
         
-        /* Professional Enterprise Security Features */
-        .enterprise-features {
+        /* NEW FEATURES SECTION - COMPLETELY REDESIGNED */
+        .features-showcase {
             margin: 60px 0;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .enterprise-card {
-            background: linear-gradient(145deg, #252729, #2a2c2e);
-            border: 1px solid #393b3d;
-            border-radius: 12px;
-            padding: 40px 35px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .showcase-container {
             display: flex;
             flex-direction: column;
-            height: 100%;
+            gap: 50px;
         }
         
-        .enterprise-card::before {
+        .showcase-item {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 40px;
+            background: linear-gradient(145deg, #252729, #2a2c2e);
+            border-radius: 16px;
+            border: 1px solid #393b3d;
+            transition: all 0.3s ease;
+        }
+        
+        .showcase-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--roblox-orange);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .showcase-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .showcase-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .visual-container {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, var(--roblox-orange), #e55d00);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visual-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--roblox-orange), var(--roblox-yellow));
+            background: linear-gradient(90deg, var(--roblox-yellow), #FF9F43);
         }
         
-        .enterprise-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--roblox-orange);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        .visual-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
         }
         
-        .card-header {
+        .visual-stats {
             display: flex;
-            align-items: flex-start;
             gap: 20px;
-            margin-bottom: 25px;
+            margin-top: 20px;
         }
         
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--roblox-orange), #e55d00);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 2rem;
-            color: white;
+        .visual-stat {
+            text-align: center;
         }
         
-        .card-title-section {
-            flex: 1;
-        }
-        
-        .card-title {
-            font-size: 1.5rem;
+        .visual-value {
+            font-size: 1.8rem;
             font-weight: 700;
+        }
+        
+        .visual-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .showcase-content {
+            flex: 1.2;
+        }
+        
+        .showcase-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
             color: white;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            font-weight: 700;
         }
         
-        .card-subtitle {
+        .showcase-subtitle {
             color: var(--roblox-orange);
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
         
-        .card-description {
+        .showcase-description {
             color: #b0b3b8;
             line-height: 1.7;
             margin-bottom: 25px;
-            flex-grow: 1;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
         
-        .feature-highlights {
-            list-style: none;
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 25px;
         }
         
-        .feature-highlights li {
-            margin-bottom: 12px;
-            padding-left: 28px;
-            position: relative;
-            color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-        
-        .feature-highlights li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--roblox-orange);
-            font-weight: bold;
-            font-size: 1.1rem;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 107, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .card-footer {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid #393b3d;
-        }
-        
-        .tech-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .feature-tag {
             background: rgba(255, 107, 0, 0.1);
             color: var(--roblox-orange);
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             border: 1px solid rgba(255, 107, 0, 0.2);
         }
         
-        .performance-metric {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #b0b3b8;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
         
-        .metric-value {
+        .performance-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .performance-icon {
+            color: var(--roblox-orange);
+            font-size: 1.2rem;
+        }
+        
+        .performance-text {
+            font-size: 0.9rem;
+        }
+        
+        .performance-value {
             color: var(--roblox-orange);
             font-weight: 700;
+            margin-left: auto;
         }
         
         /* API Documentation - Roblox Style */
@@ -644,24 +650,27 @@
                 font-size: 2.2rem;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
+            .showcase-item {
+                flex-direction: column !important;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+            
+            .visual-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .visual-icon {
+                font-size: 3rem;
+            }
+            
+            .showcase-title {
+                font-size: 1.7rem;
             }
             
             .content-section, .install-section, .api-section {
                 padding: 30px 20px;
-            }
-            
-            .card-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .card-footer {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
             }
         }
     </style>
@@ -736,104 +745,204 @@
 
         <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Advanced Trading Intelligence</h2>
-                <p class="section-subtitle">Professional market analysis and limited item tracking for serious Roblox traders</p>
+                <h2 class="section-title">Market Intelligence Platform</h2>
+                <p class="section-subtitle">Advanced tools and analytics for serious Roblox limited item traders</p>
             </div>
             
-            <div class="enterprise-features">
-                <div class="features-grid">
-                    <div class="enterprise-card">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="card-title-section">
-                                <h3 class="card-title">Real-Time Market Analytics</h3>
-                                <div class="card-subtitle">Live Price Tracking Engine</div>
+            <!-- COMPLETELY REDESIGNED FEATURES SECTION -->
+            <div class="features-showcase">
+                <div class="showcase-container">
+                    <div class="showcase-item">
+                        <div class="showcase-visual">
+                            <div class="visual-container">
+                                <div class="visual-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3>Live Scanner</h3>
+                                <div class="visual-stats">
+                                    <div class="visual-stat">
+                                        <div class="visual-value">150ms</div>
+                                        <div class="visual-label">Speed</div>
+                                    </div>
+                                    <div class="visual-stat">
+                                        <div class="visual-value">99.9%</div>
+                                        <div class="visual-label">Uptime</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="card-description">
-                            Advanced algorithms continuously monitor limited item prices, trading volume, and market trends to provide real-time insights for profitable trading decisions.
-                        </p>
-                        <ul class="feature-highlights">
-                            <li>Live price fluctuation monitoring</li>
-                            <li>Historical price analysis & trend prediction</li>
-                            <li>Volume and demand tracking systems</li>
-                            <li>Automated profit opportunity detection</li>
-                            <li>Real-time market sentiment analysis</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="tech-badge">
-                                <i class="fas fa-brain"></i>
-                                Predictive Analytics
-                            </span>
-                            <div class="performance-metric">
-                                <i class="fas fa-bolt"></i>
-                                Updates: <span class="metric-value">&lt;150ms</span>
+                        <div class="showcase-content">
+                            <h3 class="showcase-title">Real-Time Market Scanner</h3>
+                            <div class="showcase-subtitle">Instant Price Detection</div>
+                            <p class="showcase-description">
+                                Our advanced scanning technology monitors the entire Roblox limited marketplace in real-time, 
+                                detecting price changes and trading opportunities before anyone else. Get instant alerts when 
+                                valuable items become available at profitable prices.
+                            </p>
+                            <div class="feature-tags">
+                                <span class="feature-tag">Live Updates</span>
+                                <span class="feature-tag">Price Alerts</span>
+                                <span class="feature-tag">Instant Notifications</span>
+                            </div>
+                            <div class="performance-grid">
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="performance-text">Scan Speed</div>
+                                    <div class="performance-value">150ms</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="performance-text">Items Tracked</div>
+                                    <div class="performance-value">25K+</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="performance-text">Accuracy</div>
+                                    <div class="performance-value">99.9%</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="performance-text">Update Rate</div>
+                                    <div class="performance-value">2s</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="enterprise-card">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="card-title-section">
-                                <h3 class="card-title">Market Intelligence Platform</h3>
-                                <div class="card-subtitle">Comprehensive Data Infrastructure</div>
+                    <div class="showcase-item">
+                        <div class="showcase-visual">
+                            <div class="visual-container">
+                                <div class="visual-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3>AI Predictor</h3>
+                                <div class="visual-stats">
+                                    <div class="visual-stat">
+                                        <div class="visual-value">96%</div>
+                                        <div class="visual-label">Accuracy</div>
+                                    </div>
+                                    <div class="visual-stat">
+                                        <div class="visual-value">5Y</div>
+                                        <div class="visual-label">Data</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="card-description">
-                            Massive historical database with years of limited item trading data, enabling deep market analysis and accurate price prediction models.
-                        </p>
-                        <ul class="feature-highlights">
-                            <li>Multi-year historical price database</li>
-                            <li>Pattern recognition algorithms</li>
-                            <li>Seasonal trend analysis</li>
-                            <li>Rarity and demand scoring</li>
-                            <li>Automated investment recommendations</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="tech-badge">
-                                <i class="fas fa-server"></i>
-                                Big Data
-                            </span>
-                            <div class="performance-metric">
-                                <i class="fas fa-history"></i>
-                                Data: <span class="metric-value">5+ Years</span>
+                        <div class="showcase-content">
+                            <h3 class="showcase-title">AI Price Prediction Engine</h3>
+                            <div class="showcase-subtitle">Smart Market Forecasting</div>
+                            <p class="showcase-description">
+                                Leverage our machine learning algorithms trained on 5+ years of market data to predict 
+                                future price movements with 96% accuracy. Make informed trading decisions and maximize 
+                                your profits with our advanced forecasting technology.
+                            </p>
+                            <div class="feature-tags">
+                                <span class="feature-tag">Machine Learning</span>
+                                <span class="feature-tag">Price Forecasts</span>
+                                <span class="feature-tag">Trend Analysis</span>
+                            </div>
+                            <div class="performance-grid">
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="performance-text">Prediction Accuracy</div>
+                                    <div class="performance-value">96%</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-history"></i>
+                                    </div>
+                                    <div class="performance-text">Historical Data</div>
+                                    <div class="performance-value">5+ Years</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div class="performance-text">Algorithms</div>
+                                    <div class="performance-value">12+</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div class="performance-text">Market Coverage</div>
+                                    <div class="performance-value">100%</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="enterprise-card">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-bell"></i>
-                            </div>
-                            <div class="card-title-section">
-                                <h3 class="card-title">Smart Alert System</h3>
-                                <div class="card-subtitle">Automated Opportunity Detection</div>
+                    <div class="showcase-item">
+                        <div class="showcase-visual">
+                            <div class="visual-container">
+                                <div class="visual-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Trade Guard</h3>
+                                <div class="visual-stats">
+                                    <div class="visual-stat">
+                                        <div class="visual-value">0</div>
+                                        <div class="visual-label">Scams</div>
+                                    </div>
+                                    <div class="visual-stat">
+                                        <div class="visual-value">100%</div>
+                                        <div class="visual-label">Safety</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="card-description">
-                            Intelligent notification system that alerts you to profitable trading opportunities, price drops, and market movements in real-time.
-                        </p>
-                        <ul class="feature-highlights">
-                            <li>Custom price threshold alerts</li>
-                            <li>Volume spike notifications</li>
-                            <li>Trend reversal detection</li>
-                            <li>Multi-platform notifications</li>
-                            <li>Smart opportunity scoring</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="tech-badge">
-                                <i class="fas fa-robot"></i>
-                                AI Powered
-                            </span>
-                            <div class="performance-metric">
-                                <i class="fas fa-bullseye"></i>
-                                Accuracy: <span class="metric-value">96.5%</span>
+                        <div class="showcase-content">
+                            <h3 class="showcase-title">Advanced Trade Protection</h3>
+                            <div class="showcase-subtitle">Secure Trading Environment</div>
+                            <p class="showcase-description">
+                                Our comprehensive security system protects you from scams and fraudulent trades. 
+                                Automatic item verification, trade history analysis, and real-time scam detection 
+                                ensure every transaction is safe and profitable.
+                            </p>
+                            <div class="feature-tags">
+                                <span class="feature-tag">Scam Detection</span>
+                                <span class="feature-tag">Item Verification</span>
+                                <span class="feature-tag">Safe Trading</span>
+                            </div>
+                            <div class="performance-grid">
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <div class="performance-text">Scams Blocked</div>
+                                    <div class="performance-value">15K+</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="performance-text">Verified Trades</div>
+                                    <div class="performance-value">500K+</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="performance-text">Detection Speed</div>
+                                    <div class="performance-value">200ms</div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="performance-text">Security Score</div>
+                                    <div class="performance-value">100%</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1138,11 +1247,11 @@
                 });
             });
 
-            document.querySelectorAll('.enterprise-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.6s ease';
-                observer.observe(card);
+            document.querySelectorAll('.showcase-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
             });
         });
     </script>
