@@ -66,17 +66,11 @@
         }
         
         .logo-icon {
-            background: var(--primary-color);
-            color: white;
             width: 40px;
             height: 40px;
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
         }
         
         .roblox-logo {
@@ -86,6 +80,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            filter: brightness(0) invert(1); /* Makes the logo white */
         }
         
         nav ul {
