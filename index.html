@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --roblox-blue: #00a2ff;
-            --roblox-dark-blue: #0080cc;
+            --primary-color: rgb(58, 123, 255);
+            --primary-dark: rgb(40, 90, 220);
+            --primary-light: rgb(100, 150, 255);
             --roblox-dark: #191a1c;
             --roblox-gray: #2d2f31;
             --roblox-light-gray: #f8f9fa;
@@ -17,8 +18,6 @@
             --roblox-green: #00b300;
             --roblox-red: #ff4444;
             --roblox-yellow: #ffaa00;
-            --roblox-orange: #ff6b00;
-            --roblox-purple: #9b59b6;
         }
         
         * {
@@ -67,7 +66,7 @@
         }
         
         .logo-icon {
-            background: var(--roblox-orange);
+            background: var(--primary-color);
             color: white;
             width: 40px;
             height: 40px;
@@ -104,7 +103,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--roblox-orange);
+            background: var(--primary-color);
             transition: width 0.3s;
         }
         
@@ -134,7 +133,7 @@
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
-            background: linear-gradient(45deg, var(--roblox-orange), #FF9F43);
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -165,7 +164,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--roblox-orange);
+            color: var(--primary-color);
         }
         
         .stat-label {
@@ -222,7 +221,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--roblox-orange), var(--roblox-yellow));
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
         }
         
         .install-title {
@@ -239,7 +238,7 @@
         }
         
         .install-btn {
-            background: var(--roblox-orange);
+            background: var(--primary-color);
             color: white;
             border: none;
             padding: 18px 45px;
@@ -255,7 +254,7 @@
         }
         
         .install-btn:hover {
-            background: #e55d00;
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
         
@@ -263,14 +262,14 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 107, 0, 0.2);
-            color: var(--roblox-orange);
+            background: rgba(58, 123, 255, 0.2);
+            color: var(--primary-color);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-top: 15px;
-            border: 1px solid rgba(255, 107, 0, 0.3);
+            border: 1px solid rgba(58, 123, 255, 0.3);
         }
         
         /* NEW FEATURES SECTION - COMPLETELY REDESIGNED */
@@ -297,7 +296,7 @@
         
         .showcase-item:hover {
             transform: translateY(-5px);
-            border-color: var(--roblox-orange);
+            border-color: var(--primary-color);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
@@ -315,7 +314,7 @@
         .visual-container {
             width: 280px;
             height: 280px;
-            background: linear-gradient(135deg, var(--roblox-orange), #e55d00);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             border-radius: 20px;
             display: flex;
             flex-direction: column;
@@ -333,7 +332,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--roblox-yellow), #FF9F43);
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
         }
         
         .visual-icon {
@@ -373,7 +372,7 @@
         }
         
         .showcase-subtitle {
-            color: var(--roblox-orange);
+            color: var(--primary-color);
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 20px;
@@ -396,13 +395,13 @@
         }
         
         .feature-tag {
-            background: rgba(255, 107, 0, 0.1);
-            color: var(--roblox-orange);
+            background: rgba(58, 123, 255, 0.1);
+            color: var(--primary-color);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid rgba(255, 107, 0, 0.2);
+            border: 1px solid rgba(58, 123, 255, 0.2);
         }
         
         .performance-grid {
@@ -421,7 +420,7 @@
         }
         
         .performance-icon {
-            color: var(--roblox-orange);
+            color: var(--primary-color);
             font-size: 1.2rem;
         }
         
@@ -430,7 +429,7 @@
         }
         
         .performance-value {
-            color: var(--roblox-orange);
+            color: var(--primary-color);
             font-weight: 700;
             margin-left: auto;
         }
@@ -453,7 +452,7 @@
         
         .api-icon {
             font-size: 2rem;
-            color: var(--roblox-orange);
+            color: var(--primary-color);
         }
         
         .api-title {
@@ -593,7 +592,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: var(--roblox-orange);
+            background: var(--primary-color);
             color: white;
             padding: 15px 25px;
             border-radius: 6px;
@@ -604,7 +603,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid rgba(255, 107, 0, 0.3);
+            border: 1px solid rgba(58, 123, 255, 0.3);
         }
         
         @keyframes slideIn {
@@ -881,71 +880,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="showcase-item">
-                        <div class="showcase-visual">
-                            <div class="visual-container">
-                                <div class="visual-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <h3>AI Analyzer</h3>
-                                <div class="visual-stats">
-                                    <div class="visual-stat">
-                                        <div class="visual-value">96%</div>
-                                        <div class="visual-label">Accuracy</div>
-                                    </div>
-                                    <div class="visual-stat">
-                                        <div class="visual-value">5Y</div>
-                                        <div class="visual-label">Data</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase-content">
-                            <h3 class="showcase-title">AI-Powered Threat Intelligence</h3>
-                            <div class="showcase-subtitle">Machine Learning Security</div>
-                            <p class="showcase-description">
-                                Advanced machine learning algorithms analyze trading patterns, item histories, and ownership data 
-                                to detect sophisticated poisoning attempts. Our AI continuously learns from new threats to provide 
-                                enterprise-grade security for your limited items.
-                            </p>
-                            <div class="feature-tags">
-                                <span class="feature-tag">Machine Learning</span>
-                                <span class="feature-tag">Behavioral Analysis</span>
-                                <span class="feature-tag">Pattern Recognition</span>
-                            </div>
-                            <div class="performance-grid">
-                                <div class="performance-item">
-                                    <div class="performance-icon">
-                                        <i class="fas fa-robot"></i>
-                                    </div>
-                                    <div class="performance-text">AI Accuracy</div>
-                                    <div class="performance-value">96%</div>
-                                </div>
-                                <div class="performance-item">
-                                    <div class="performance-icon">
-                                        <i class="fas fa-database"></i>
-                                    </div>
-                                    <div class="performance-text">Training Data</div>
-                                    <div class="performance-value">5+ Years</div>
-                                </div>
-                                <div class="performance-item">
-                                    <div class="performance-icon">
-                                        <i class="fas fa-lightbulb"></i>
-                                    </div>
-                                    <div class="performance-text">Algorithms</div>
-                                    <div class="performance-value">15+</div>
-                                </div>
-                                <div class="performance-item">
-                                    <div class="performance-icon">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <div class="performance-text">Threat Prediction</div>
-                                    <div class="performance-value">94%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1023,17 +957,17 @@
             
             <div class="trust-logos">
                 <div class="trust-logo">
-                    <i class="fas fa-award" style="font-size: 3rem; color: var(--roblox-orange);"></i>
+                    <i class="fas fa-award" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Verified Security</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-users" style="font-size: 3rem; color: var(--roblox-orange);"></i>
+                    <i class="fas fa-users" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Community Trusted</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--roblox-orange);"></i>
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Security Certified</div>
                 </div>
             </div>
@@ -1103,37 +1037,37 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #2d1b00;
-        border: 3px solid #FF6B00;
+        background: #1a1f2e;
+        border: 3px solid rgb(58, 123, 255);
         border-radius: 15px;
         padding: 20px;
         color: white;
         font-family: Arial;
         z-index: 9999;
         min-width: 320px;
-        box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+        box-shadow: 0 0 30px rgba(58, 123, 255, 0.5);
         text-align: center;
     \`;
     
     gui.innerHTML = \`
         <div style="text-align: center; margin-bottom: 15px;">
-            <strong style="font-size: 18px; color: #FF9F43;">🛡️ Roblox Security Scanner v3.2.1</strong>
+            <strong style="font-size: 18px; color: rgb(100, 150, 255);">🛡️ Roblox Security Scanner v3.2.1</strong>
         </div>
         <div style="font-size: 12px; text-align: left; margin-bottom: 15px;">
-            <div>🔍 Status: <span id="scannerStatus" style="color: #FF9F43;">ACTIVE</span></div>
+            <div>🔍 Status: <span id="scannerStatus" style="color: rgb(100, 150, 255);">ACTIVE</span></div>
             <div>📊 Scans Completed: <span id="scanCount">0</span></div>
             <div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>
             <div>⏰ Last Scan: <span id="lastScan">Just now</span></div>
             <div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>
             <div>💚 Safe Trades: <span id="safeTrades">0</span></div>
         </div>
-        <div style="margin: 15px 0; padding: 10px; background: #3d2a0f; border-radius: 8px; font-size: 11px;">
-            <div style="color: #FF9F43;">🔄 Poison Detection: ACTIVE</div>
+        <div style="margin: 15px 0; padding: 10px; background: #252f3d; border-radius: 8px; font-size: 11px;">
+            <div style="color: rgb(100, 150, 255);">🔄 Poison Detection: ACTIVE</div>
             <div style="color: #2ECC40;">✅ Limited Scanner: CLEAN</div>
             <div style="color: #FFDC00;">⚠️ Trade Monitor: ENABLED</div>
         </div>
         <button id="closeScanner" style="
-            background: #FF6B00;
+            background: rgb(58, 123, 255);
             color: white;
             border: none;
             padding: 10px 20px;
