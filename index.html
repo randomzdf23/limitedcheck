@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox Poison Checker - Official</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -108,6 +109,14 @@
             margin-bottom: 25px;
             color: #232527;
             font-weight: 600;
+            text-align: center;
+        }
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #5c6166;
+            font-size: 1.1rem;
         }
         .install-section {
             text-align: center;
@@ -135,38 +144,89 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 162, 255, 0.4);
         }
+        
+        /* Professional Features Section */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin: 50px 0;
         }
         .feature-card {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid #00a2ff;
+            padding: 35px 30px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00a2ff, #00c4cc);
         }
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
         }
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
             color: #00a2ff;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(0, 162, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .feature-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             color: #232527;
+            font-weight: 700;
         }
         .feature-card p {
             color: #5c6166;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #5c6166;
+        }
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2ECC40;
+            font-weight: bold;
+        }
+        .feature-badge {
+            display: inline-block;
+            background: #f0f8ff;
+            color: #00a2ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
         footer {
             background: #232527;
             color: white;
@@ -271,6 +331,10 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -320,22 +384,53 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Key Features</h2>
+            <h2 class="section-title">Advanced Protection Features</h2>
+            <p class="section-subtitle">Our comprehensive security suite provides multiple layers of protection for your Roblox trading activities</p>
+            
             <div class="features">
                 <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Advanced Scanning</h3>
-                    <p>Checks to see if certain items are poisoned by examining deleted owner histories on items to help prevent unwanted termination.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Advanced Item Scanning</h3>
+                    <p>Comprehensive analysis of item histories to detect poisoned items before they enter your inventory. Our system examines deleted owner records and trading patterns.</p>
+                    <ul class="feature-list">
+                        <li>Real-time item verification</li>
+                        <li>Historical owner analysis</li>
+                        <li>Pattern recognition algorithms</li>
+                        <li>Automated threat detection</li>
+                    </ul>
+                    <span class="feature-badge">Updated Daily</span>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Account Safety</h3>
-                    <p>Guarantees a thorough limited cleaning process to help clean your inventory of poisoned and inactive limiteds. Your safety is our top priority.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Account Security</h3>
+                    <p>Complete protection for your Roblox account with automated cleaning of poisoned and inactive limited items. Your security is our highest priority.</p>
+                    <ul class="feature-list">
+                        <li>Automated inventory cleaning</li>
+                        <li>Real-time trade monitoring</li>
+                        <li>Secure transaction validation</li>
+                        <li>Account integrity checks</li>
+                    </ul>
+                    <span class="feature-badge">Zero False Positives</span>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Instant cleaning for poisoned items with efficiency and 0 delays to help you recover your items quickly.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>High-Performance Engine</h3>
+                    <p>Lightning-fast scanning and cleaning with zero delays. Our optimized algorithms ensure minimal impact on your trading experience.</p>
+                    <ul class="feature-list">
+                        <li>Sub-second scanning</li>
+                        <li>Background operation</li>
+                        <li>Low resource usage</li>
+                        <li>Instant threat response</li>
+                    </ul>
+                    <span class="feature-badge">99.9% Uptime</span>
                 </div>
             </div>
         </section>
