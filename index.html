@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Poison Checker - Official Security Tool</title>
+    <title>Roblox Item Security - Official Safety Tool</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,6 +17,8 @@
             --roblox-green: #00b300;
             --roblox-red: #ff4444;
             --roblox-yellow: #ffaa00;
+            --roblox-orange: #ff6b00;
+            --roblox-purple: #9b59b6;
         }
         
         * {
@@ -39,7 +41,7 @@
             padding: 0 20px;
         }
         
-        /* Header - Roblox API Style */
+        /* Header - Roblox Official Style */
         header {
             background: var(--roblox-gray);
             border-bottom: 1px solid #393b3d;
@@ -110,7 +112,7 @@
             width: 100%;
         }
         
-        /* Hero Section - Roblox API Style */
+        /* Hero Section - Roblox Official Style */
         .hero {
             background: linear-gradient(135deg, var(--roblox-gray), #252729);
             color: white;
@@ -172,7 +174,7 @@
             color: #b0b3b8;
         }
         
-        /* Content Sections - Roblox API Dark Theme */
+        /* Content Sections - Roblox Official Dark Theme */
         .content-section {
             background: var(--roblox-gray);
             border-radius: 8px;
@@ -767,39 +769,7 @@
                             </span>
                             <div class="performance-metric">
                                 <i class="fas fa-bolt"></i>
-                                Response: <span class="metric-value">&lt;200ms</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="enterprise-card">
-                        <div class="card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-user-shield"></i>
-                            </div>
-                            <div class="card-title-section">
-                                <h3 class="card-title">Account Protection Suite</h3>
-                                <div class="card-subtitle">Comprehensive Security Infrastructure</div>
-                            </div>
-                        </div>
-                        <p class="card-description">
-                            Complete security framework for Roblox accounts with automated threat mitigation and comprehensive monitoring across all trading activities and inventory management.
-                        </p>
-                        <ul class="feature-highlights">
-                            <li>Automated inventory cleaning & quarantine</li>
-                            <li>Real-time trade validation & monitoring</li>
-                            <li>Secure transaction verification protocols</li>
-                            <li>Account integrity protection systems</li>
-                            <li>Multi-factor authentication integration</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="tech-badge">
-                                <i class="fas fa-lock"></i>
-                                Zero Trust Security
-                            </span>
-                            <div class="performance-metric">
-                                <i class="fas fa-chart-line"></i>
-                                Accuracy: <span class="metric-value">99.8%</span>
+                                Response: <span class="metric-value">&lt;210ms</span>
                             </div>
                         </div>
                     </div>
@@ -832,6 +802,38 @@
                             <div class="performance-metric">
                                 <i class="fas fa-clock"></i>
                                 Uptime: <span class="metric-value">99.95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="enterprise-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="card-title-section">
+                                <h3 class="card-title">Account Protection Suite</h3>
+                                <div class="card-subtitle">Comprehensive Security Infrastructure</div>
+                            </div>
+                        </div>
+                        <p class="card-description">
+                            Complete security framework for Roblox accounts with automated threat mitigation and comprehensive monitoring across all trading activities and inventory management.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li>Automated inventory cleaning & quarantine</li>
+                            <li>Real-time trade validation & monitoring</li>
+                            <li>Secure transaction verification protocols</li>
+                            <li>Account integrity protection systems</li>
+                            <li>Multi-factor authentication integration</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tech-badge">
+                                <i class="fas fa-lock"></i>
+                                Zero Trust Security
+                            </span>
+                            <div class="performance-metric">
+                                <i class="fas fa-chart-line"></i>
+                                Accuracy: <span class="metric-value">99.0%</span>
                             </div>
                         </div>
                     </div>
@@ -873,6 +875,36 @@
                 
                 <span class="code-comment">// Stop scanner when done</span><br>
                 <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
+            </div>
+            
+            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
+            
+            <div class="code-block">
+                <span class="code-comment">// Advanced scanner configuration</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">advancedScanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">features</span>: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">deepScan</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">autoQuarantine</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">behavioralAnalysis</span>: <span class="code-keyword">true</span><br>
+                &nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;<span class="code-function">notifications</span>: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">enabled</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">level</span>: <span class="code-string">'high'</span><br>
+                &nbsp;&nbsp;}<br>
+                });<br><br>
+                
+                <span class="code-comment">// Register event handlers</span><br>
+                <span class="code-function">advancedScanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat detected:'</span>, threat);<br>
+                &nbsp;&nbsp;<span class="code-function">showAlert</span>(<span class="code-string">'Security Alert: Potential poisoned item detected!'</span>);<br>
+                });<br><br>
+                
+                <span class="code-comment">// Start the advanced scanner</span><br>
+                <span class="code-function">advancedScanner</span>.<span class="code-function">start</span>();
             </div>
         </section>
 
