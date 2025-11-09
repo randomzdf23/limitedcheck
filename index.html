@@ -91,6 +91,13 @@
             font-weight: 700;
             font-size: 1.5rem;
             color: #b0b3b8; /* Changed to match navigation text color */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .header-shield {
+            color: #b0b3b8; /* Same color as the heading */
         }
         
         nav ul {
@@ -518,7 +525,10 @@
                         <div class="roblox-logo"></div>
                     </div>
                 </div>
-                <div class="header-title">Limited Checker</div>
+                <div class="header-title">
+                    <i class="fas fa-shield-alt header-shield"></i>
+                    Limited Checker
+                </div>
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -538,7 +548,7 @@
             
             <button class="install-btn" onclick="copyLimitedChecker()">
                 <i class="fas fa-code"></i>
-                Copy Security Script
+                Check UAID
             </button>
             
             <div class="security-badge">
@@ -779,7 +789,7 @@
             <div>💚 Safe Trades: <span id="safeTrades">0</span></div>
         </div>
         <div style="margin: 15px 0; padding: 10px; background: #252f3d; border-radius: 8px; font-size: 11px;">
-            <div style="color: rgb(100, 150, 255);">🔄 Poison Detection: ACTIVE</div>
+            <div style="color: rgb(100, 150, 255);">❌ Poison Detection: ACTIVE</div>
             <div style="color: #2ECC40;">✅ Limited Scanner: CLEAN</div>
             <div style="color: #FFDC00;">⚠️ Trade Monitor: ENABLED</div>
         </div>
