@@ -75,6 +75,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         
         nav ul {
@@ -272,6 +273,66 @@
             border: 1px solid rgba(58, 123, 255, 0.3);
         }
         
+        /* API Documentation - Roblox Style */
+        .api-section {
+            background: #252729;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid #393b3d;
+        }
+        
+        .api-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .api-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .api-title {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+        
+        .code-comment {
+            color: #6a9955;
+        }
+        
+        .code-keyword {
+            color: #569cd6;
+        }
+        
+        .code-string {
+            color: #ce9178;
+        }
+        
+        .code-number {
+            color: #b5cea8;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
+        }
+        
         /* NEW FEATURES SECTION - COMPLETELY REDESIGNED */
         .features-showcase {
             margin: 60px 0;
@@ -432,66 +493,6 @@
             color: var(--primary-color);
             font-weight: 700;
             margin-left: auto;
-        }
-        
-        /* API Documentation - Roblox Style */
-        .api-section {
-            background: #252729;
-            border-radius: 8px;
-            padding: 40px;
-            margin: 50px 0;
-            border: 1px solid #393b3d;
-        }
-        
-        .api-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .api-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .api-title {
-            font-size: 1.8rem;
-            color: white;
-            font-weight: 700;
-        }
-        
-        .code-block {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 6px;
-            padding: 25px;
-            margin: 25px 0;
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            font-size: 0.95rem;
-            overflow-x: auto;
-            color: #e0e0e0;
-            line-height: 1.5;
-        }
-        
-        .code-comment {
-            color: #6a9955;
-        }
-        
-        .code-keyword {
-            color: #569cd6;
-        }
-        
-        .code-string {
-            color: #ce9178;
-        }
-        
-        .code-number {
-            color: #b5cea8;
-        }
-        
-        .code-function {
-            color: #dcdcaa;
         }
         
         /* Trust Indicators */
@@ -679,7 +680,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">RLC</div>
+                    <div class="logo-icon">R</div>
                     <span>Limited Checker</span>
                 </div>
                 <nav>
@@ -739,6 +740,74 @@
             
             <div class="warning-box">
                 <strong>Security Notice:</strong> Only use scripts from this official domain. Never expose API keys or sensitive credentials in client-side code.
+            </div>
+        </section>
+
+        <!-- MOVED API DOCUMENTATION SECTION HERE -->
+        <section class="api-section">
+            <div class="api-header">
+                <div class="api-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="api-title">Security API Documentation</h2>
+            </div>
+            
+            <p style="color: #b0b3b8; margin-bottom: 25px; line-height: 1.7;">
+                Integrate our poison detection scanner into your Roblox trading applications using our simple JavaScript API. 
+                The scanner runs locally in the browser and provides real-time protection against poisoned limiteds.
+            </p>
+            
+            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
+            
+            <div class="code-block">
+                <span class="code-comment">// Initialize the security scanner</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">scanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span><br>
+                });<br><br>
+                
+                <span class="code-comment">// Start scanning for threats</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">start</span>();<br><br>
+                
+                <span class="code-comment">// Monitor scanner status</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat blocked:'</span>, threat);<br>
+                });<br><br>
+                
+                <span class="code-comment">// Stop scanner when done</span><br>
+                <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
+            </div>
+            
+            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
+            
+            <div class="code-block">
+                <span class="code-comment">// Advanced scanner configuration</span><br>
+                <span class="code-keyword">const</span> <span class="code-function">advancedScanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
+                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span>,<br>
+                &nbsp;&nbsp;<span class="code-function">features</span>: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">deepScan</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">autoQuarantine</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">behavioralAnalysis</span>: <span class="code-keyword">true</span><br>
+                &nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;<span class="code-function">notifications</span>: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">enabled</span>: <span class="code-keyword">true</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">level</span>: <span class="code-string">'high'</span><br>
+                &nbsp;&nbsp;}<br>
+                });<br><br>
+                
+                <span class="code-comment">// Register event handlers</span><br>
+                <span class="code-function">advancedScanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
+                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat detected:'</span>, threat);<br>
+                &nbsp;&nbsp;<span class="code-function">showAlert</span>(<span class="code-string">'Security Alert: Poisoned limited detected!'</span>);<br>
+                });<br><br>
+                
+                <span class="code-comment">// Start the advanced scanner</span><br>
+                <span class="code-function">advancedScanner</span>.<span class="code-function">start</span>();
             </div>
         </section>
 
@@ -884,73 +953,6 @@
             </div>
         </section>
 
-        <section class="api-section">
-            <div class="api-header">
-                <div class="api-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h2 class="api-title">Security API Documentation</h2>
-            </div>
-            
-            <p style="color: #b0b3b8; margin-bottom: 25px; line-height: 1.7;">
-                Integrate our poison detection scanner into your Roblox trading applications using our simple JavaScript API. 
-                The scanner runs locally in the browser and provides real-time protection against poisoned limiteds.
-            </p>
-            
-            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
-            
-            <div class="code-block">
-                <span class="code-comment">// Initialize the security scanner</span><br>
-                <span class="code-keyword">const</span> <span class="code-function">scanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
-                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span><br>
-                });<br><br>
-                
-                <span class="code-comment">// Start scanning for threats</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">start</span>();<br><br>
-                
-                <span class="code-comment">// Monitor scanner status</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
-                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat blocked:'</span>, threat);<br>
-                });<br><br>
-                
-                <span class="code-comment">// Stop scanner when done</span><br>
-                <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
-            </div>
-            
-            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
-            
-            <div class="code-block">
-                <span class="code-comment">// Advanced scanner configuration</span><br>
-                <span class="code-keyword">const</span> <span class="code-function">advancedScanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
-                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">features</span>: {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">deepScan</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">autoQuarantine</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">behavioralAnalysis</span>: <span class="code-keyword">true</span><br>
-                &nbsp;&nbsp;},<br>
-                &nbsp;&nbsp;<span class="code-function">notifications</span>: {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">enabled</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">level</span>: <span class="code-string">'high'</span><br>
-                &nbsp;&nbsp;}<br>
-                });<br><br>
-                
-                <span class="code-comment">// Register event handlers</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
-                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat detected:'</span>, threat);<br>
-                &nbsp;&nbsp;<span class="code-function">showAlert</span>(<span class="code-string">'Security Alert: Poisoned limited detected!'</span>);<br>
-                });<br><br>
-                
-                <span class="code-comment">// Start the advanced scanner</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">start</span>();
-            </div>
-        </section>
-
         <section class="trust-section">
             <h2 class="section-title">Trusted by Traders</h2>
             <p class="section-subtitle">Join thousands of Roblox traders who rely on our security scanner</p>
@@ -978,7 +980,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Roblox Limited Checker API</h3>
+                    <h3>Limited Checker API</h3>
                     <p>The official security scanner for Roblox traders, protecting accounts and inventories from poisoned limiteds since 2021.</p>
                 </div>
                 
@@ -1014,7 +1016,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Roblox Limited Checker API. All rights reserved.</p>
+                <p>&copy; 2025 Limited Checker API. All rights reserved.</p>
                 <p>Roblox is a registered trademark of Roblox Corporation. This API is not officially affiliated with Roblox Corporation.</p>
                 
                 <div class="footer-legal">
@@ -1205,5 +1207,3 @@
     </script>
 </body>
 </html>
-
-
