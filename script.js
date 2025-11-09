@@ -146,7 +146,7 @@ function showCopySuccess() {
         animation: slideIn 0.3s ease;
     `;
     
-    successMsg.innerHTML = '✅ Code copied to clipboard!';
+    successMsg.innerHTML = '✅copied to clipboard!';
     
     document.body.appendChild(successMsg);
     
@@ -193,3 +193,4 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
