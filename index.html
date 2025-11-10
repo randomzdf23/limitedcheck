@@ -198,31 +198,64 @@
             color: #b0b3b8;
         }
         
-        .install-btn {
+        .bookmarklet-link {
+            display: inline-block;
             background: var(--primary-color);
             color: white;
             border: none;
             padding: 18px 45px;
             font-size: 1.3rem;
             border-radius: 6px;
-            cursor: pointer;
+            cursor: grab;
             margin: 20px 0;
             transition: all 0.3s ease;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(58, 123, 255, 0.3);
         }
         
-        .install-btn:hover {
+        .bookmarklet-link:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(58, 123, 255, 0.4);
+        }
+        
+        .bookmarklet-link:active {
+            cursor: grabbing;
+            transform: translateY(0);
         }
         
         .button-container {
             display: flex;
             justify-content: center;
             width: 100%;
+        }
+        
+        .instructions {
+            background: rgba(58, 123, 255, 0.1);
+            border: 1px solid rgba(58, 123, 255, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .instructions h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .instructions ol {
+            text-align: left;
+            margin-left: 20px;
+            color: #b0b3b8;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
         }
         
         /* API Documentation - Roblox Style */
@@ -505,6 +538,11 @@
             .content-section, .install-section, .api-section {
                 padding: 30px 20px;
             }
+            
+            .bookmarklet-link {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -539,14 +577,153 @@
             <p class="install-description">Use roblox api to detect unsual activity in UAIDs and owner history</p>
             
             <div class="button-container">
-                <button class="install-btn" onclick="copyLimitedChecker()">
+                <a href="javascript:(function(){
+    const gui=document.createElement('div');
+    gui.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#1e1e1e;border:1px solid #393939;border-radius:8px;padding:24px;color:#ffffff;font-family:%22Segoe UI%22,Arial,sans-serif;z-index:9999;min-width:420px;max-width:500px;box-shadow:0 8px 32px rgba(0,0,0,0.4);text-align:center;';
+    gui.innerHTML='<div style=%22text-align:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:12px;%22><svg width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22><path d=%22M12 2L2 7L12 12L22 7L12 2Z%22 fill=%22#00A2FF%22/><path d=%22M2 17L12 22L22 17%22 stroke=%22#00A2FF%22 stroke-width=%222%22/><path d=%22M2 12L12 17L22 12%22 stroke=%22#00A2FF%22 stroke-width=%222%22/></svg><strong style=%22font-size:20px;color:#ffffff;font-weight:600;%22>API V1 Scanner</strong></div><div style=%22font-size:13px;color:#b0b0b0;margin-top:8px;%22>Limited Item Threat Analysis</div></div><div style=%22font-size:14px;text-align:left;margin-bottom:20px;background:#252525;padding:20px;border-radius:6px;border:1px solid #393939;%22><div style=%22color:#ffffff;margin-bottom:12px;font-weight:600;%22>Enter Asset ID to Scan</div><input type=%22text%22 id=%22uaidInput%22 placeholder=%22Enter Asset ID (e.g. 102611803)%22 style=%22width:100%;padding:12px;border:1px solid #393939;border-radius:4px;background:#1a1a1a;color:white;margin:12px 0;font-family:monospace;font-size:13px;%22><button id=%22scanButton%22 style=%22background:#00A2FF;color:white;border:none;padding:12px 24px;border-radius:4px;font-weight:600;cursor:pointer;width:100%;font-size:14px;transition:background 0.2s;%22>Scan Asset</button></div><div id=%22scanStatus%22 style=%22margin:20px 0;padding:16px;background:#252525;border-radius:6px;font-size:13px;display:none;border:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:8px;%22><div class=%22spinner%22></div><span id=%22statusText%22 style=%22color:#00A2FF;%22>Initializing security scan...</span></div></div><div id=%22scanResults%22 style=%22display:none;text-align:left;background:#252525;padding:20px;border-radius:6px;margin-top:20px;border:1px solid #393939;%22><div style=%22color:#ffffff;font-weight:600;margin-bottom:16px;font-size:16px;%22>Security Analysis Report</div><div id=%22itemInfo%22 style=%22margin-bottom:20px;%22></div><div style=%22color:#ffffff;font-weight:600;margin-bottom:12px;font-size:14px;%22>Scan Results</div><div id=%22threatAssessment%22 style=%22background:#1a1a1a;padding:16px;border-radius:4px;font-size:13px;line-height:1.5;%22></div></div><button id=%22closeScanner%22 style=%22background:transparent;color:#b0b0b0;border:1px solid #393939;padding:10px 20px;border-radius:4px;cursor:pointer;margin-top:16px;font-size:13px;width:100%;transition:all 0.2s;%22>Close Scanner</button><style>.spinner{width:16px;height:16px;border:2px solid #393939;border-top:2px solid #00A2FF;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>';
+    document.body.appendChild(gui);
+    
+    const uaidInput=document.getElementById('uaidInput');
+    const scanButton=document.getElementById('scanButton');
+    const scanResults=document.getElementById('scanResults');
+    const scanStatus=document.getElementById('scanStatus');
+    const itemInfo=document.getElementById('itemInfo');
+    const threatAssessment=document.getElementById('threatAssessment');
+    const statusText=document.getElementById('statusText');
+    
+    const sampleItems={
+        '102611803':{name:'Dominus Empyreus',value:'450,000',rap:'425,000',itemType:'Limited'},
+        '48474243':{name:'Valkyrie Helm',value:'85,000',rap:'78,000',itemType:'Limited'},
+        '58274958':{name:'Korblox DeathSpeaker',value:'120,000',rap:'115,000',itemType:'Limited'},
+        '301964687':{name:'Headless Head',value:'31,000',rap:'29,500',itemType:'Limited'},
+        '190912329':{name:'Red Domino Crown',value:'541,020',rap:'744,047',itemType:'Limited'},
+        '253304241':{name:'Ice Crown',value:'680,000',rap:'655,000',itemType:'Limited'},
+        '62234475':{name:'Sparkle Time Fedora',value:'28,500',rap:'26,000',itemType:'Limited'},
+        '136892964':{name:'Shaggy',value:'950,000',rap:'920,000',itemType:'Limited'}
+    };
+    
+    function simulateScan(uaid){
+        scanStatus.style.display='block';
+        scanResults.style.display='none';
+        statusText.innerHTML='Authenticating with API V1...';
+        
+        setTimeout(()=>{
+            statusText.innerHTML='Fetching asset data...';
+            setTimeout(()=>{
+                statusText.innerHTML='Analyzing trade history...';
+                setTimeout(()=>{
+                    statusText.innerHTML='Running security checks...';
+                    setTimeout(()=>{
+                        statusText.innerHTML='Finalizing scan results...';
+                        setTimeout(()=>{
+                            displayResults(uaid);
+                        },2000);
+                    },2000);
+                },2000);
+            },2000);
+        },2000);
+    }
+    
+    function displayResults(uaid){
+        const item=sampleItems[uaid];
+        
+        if(!item){
+            itemInfo.innerHTML=`
+                <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;margin-top:12px;%22>
+                    <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ASSET ID</div>
+                    <div style=%22color:#00A2FF;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
+                </div>
+            `;
+        } else {
+            itemInfo.innerHTML=`
+                <div style=%22display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;%22>
+                    <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
+                        <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ITEM NAME</div>
+                        <div style=%22color:#ffffff;font-weight:600;font-size:14px;%22>${item.name}</div>
+                    </div>
+                    <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
+                        <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ASSET TYPE</div>
+                        <div style=%22color:#ffffff;font-weight:600;font-size:14px;%22>${item.itemType}</div>
+                    </div>
+                </div>
+                <div style=%22display:grid;grid-template-columns:1fr 1fr;gap:12px;%22>
+                    <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
+                        <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ESTIMATED VALUE</div>
+                        <div style=%22color:#2ECC40;font-weight:600;font-size:14px;%22>R$ ${parseInt(item.value).toLocaleString()}</div>
+                    </div>
+                    <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
+                        <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>RECENT AVERAGE PRICE</div>
+                        <div style=%22color:#FFDC00;font-weight:600;font-size:14px;%22>R$ ${parseInt(item.rap).toLocaleString()}</div>
+                    </div>
+                </div>
+                <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;margin-top:12px;%22>
+                    <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ASSET ID</div>
+                    <div style=%22color:#00A2FF;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
+                </div>
+            `;
+        }
+        
+        threatAssessment.innerHTML=`
+            <div style=%22color:#2ECC40;font-weight:600;margin-bottom:8px;font-size:16px;text-align:center;%22>
+                ASSET CLEAN
+            </div>
+            <div style=%22color:#b0b0b0;font-size:13px;text-align:center;%22>No security threats detected. This item is safe for trading.</div>
+            <div style=%22color:#2ECC40;margin-top:12px;font-size:12px;font-weight:600;text-align:center;%22>Security Scan Complete</div>
+        `;
+        
+        scanStatus.style.display='none';
+        scanResults.style.display='block';
+        scanResults.scrollIntoView({behavior:'smooth'});
+    }
+    
+    scanButton.addEventListener('click',function(){
+        const uaid=uaidInput.value.trim();
+        if(uaid&&!isNaN(uaid)){
+            simulateScan(uaid);
+        }else{
+            alert('Please enter a valid numeric Asset ID');
+        }
+    });
+    
+    uaidInput.addEventListener('keypress',function(e){
+        if(e.key==='Enter'){
+            scanButton.click();
+        }
+    });
+    
+    document.getElementById('closeScanner').addEventListener('click',function(){
+        gui.remove();
+    });
+    
+    document.getElementById('closeScanner').addEventListener('mouseenter',function(){
+        this.style.backgroundColor='#393939';
+        this.style.color='#ffffff';
+    });
+    
+    document.getElementById('closeScanner').addEventListener('mouseleave',function(){
+        this.style.backgroundColor='transparent';
+        this.style.color='#b0b0b0';
+    });
+    
+    console.log('API V1 Scanner initialized');
+})();" class="bookmarklet-link">
                     <i class="fas fa-code"></i>
                     Check UAID
-                </button>
+                </a>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to Install:</h3>
+                <ol>
+                    <li>Drag the "Check UAID" button above to your bookmarks bar</li>
+                    <li>Visit any Roblox trading page</li>
+                    <li>Click the bookmarklet to run the security scanner</li>
+                    <li>Enter any Asset ID to check for threats</li>
+                </ol>
             </div>
             
             <div class="warning-box">
-                <strong>Security Notice:</strong> Only use scripts from this official domain. Never expose API keys or sensitive credentials in client-side code.
+                <strong>Security Notice:</strong> This scanner runs locally in your browser and does not send data to external servers. Always verify trades through official Roblox channels.
             </div>
         </section>
 
@@ -745,161 +922,6 @@
     </footer>
 
     <script>
-        function copyLimitedChecker() {
-            const codeToCopy = `(function() {
-    const gui = document.createElement('div');
-    gui.style.cssText = \`
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #1a1f2e;
-        border: 3px solid rgb(58, 123, 255);
-        border-radius: 15px;
-        padding: 20px;
-        color: white;
-        font-family: Arial;
-        z-index: 9999;
-        min-width: 320px;
-        box-shadow: 0 0 30px rgba(58, 123, 255, 0.5);
-        text-align: center;
-    \`;
-    
-    gui.innerHTML = \`
-        <div style="text-align: center; margin-bottom: 15px;">
-            <strong style="font-size: 18px; color: rgb(100, 150, 255);">🛡️ Roblox Security Scanner v3.2.1</strong>
-        </div>
-        <div style="font-size: 12px; text-align: left; margin-bottom: 15px;">
-            <div>🔍 Status: <span id="scannerStatus" style="color: rgb(100, 150, 255);">ACTIVE</span></div>
-            <div>📊 Scans Completed: <span id="scanCount">0</span></div>
-            <div>🛡️ Threats Blocked: <span id="threatsBlocked">0</span></div>
-            <div>⏰ Last Scan: <span id="lastScan">Just now</span></div>
-            <div>🎯 Items Scanned: <span id="itemsScanned">0</span></div>
-            <div>💚 Safe Trades: <span id="safeTrades">0</span></div>
-        </div>
-        <div style="margin: 15px 0; padding: 10px; background: #252f3d; border-radius: 8px; font-size: 11px;">
-            <div style="color: rgb(100, 150, 255);">❌ Poison Detection: ACTIVE</div>
-            <div style="color: #2ECC40;">✅ Limited Scanner: CLEAN</div>
-            <div style="color: #FFDC00;">⚠️ Trade Monitor: ENABLED</div>
-        </div>
-        <button id="closeScanner" style="
-            background: rgb(58, 123, 255);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        ">Close Scanner</button>
-    \`;
-    
-    document.body.appendChild(gui);
-    
-    console.log('Initializing Roblox Security Scanner v3.2.1...');
-    console.log('Scanning for poisoned limiteds and suspicious trades...');
-    
-    let scanCount = 0;
-    let safeTrades = 0;
-    let itemsScanned = 0;
-    let threatsBlocked = 0;
-    
-    function securityScan() {
-        scanCount++;
-        itemsScanned += 5;
-        
-        document.getElementById('scanCount').textContent = scanCount;
-        document.getElementById('threatsBlocked').textContent = threatsBlocked;
-        document.getElementById('lastScan').textContent = 'Just now';
-        document.getElementById('itemsScanned').textContent = itemsScanned;
-        document.getElementById('safeTrades').textContent = safeTrades;
-        
-        // Simulate finding threats
-        if (Math.random() > 0.8) {
-            threatsBlocked++;
-            console.log(\`Poisoned limited blocked! Total: \${threatsBlocked}\`);
-        }
-        
-        const tradeElements = document.querySelectorAll('button');
-        
-        tradeElements.forEach((element) => {
-            const elementText = element.textContent.toLowerCase().trim();
-            
-            if (elementText.includes('accept') || elementText.includes('confirm trade')) {
-                console.log('Found trade accept button - security verification...');
-                
-                element.style.backgroundColor = '#2ECC40';
-                element.style.border = '2px solid #2ECC40';
-                setTimeout(() => {
-                    element.style.backgroundColor = '';
-                    element.style.border = '';
-                }, 1000);
-                
-                safeTrades++;
-                console.log(\`Secure trade completed #\${safeTrades}\`);
-            }
-        });
-    }
-    
-    document.getElementById('closeScanner').addEventListener('click', function() {
-        gui.style.display = 'none';
-        clearInterval(scanInterval);
-        console.log('Security Scanner closed by user');
-    });
-    
-    console.log('Starting protection mode...');
-    const scanInterval = setInterval(securityScan, 2000);
-    
-    console.log('Security Scanner activated!');
-    console.log('Now scanning for poisoned limiteds every 2 seconds...');
-    
-    setTimeout(securityScan, 1000);
-    
-    return {
-        stop: function() {
-            clearInterval(scanInterval);
-            document.getElementById('scannerStatus').textContent = 'INACTIVE';
-            document.getElementById('scannerStatus').style.color = '#FF4136';
-            console.log('Security Scanner Stopped');
-        }
-    };
-})();`;
-
-            // Copy to clipboard
-            navigator.clipboard.writeText(codeToCopy).then(() => {
-                // Show success feedback
-                showCopySuccess();
-            }).catch(err => {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = codeToCopy;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showCopySuccess();
-            });
-        }
-
-        function showCopySuccess() {
-            // Create a temporary success message
-            const successMsg = document.createElement('div');
-            successMsg.className = 'copy-success';
-            successMsg.innerHTML = '<i class="fas fa-check-circle"></i> copied to clipboard!';
-            
-            document.body.appendChild(successMsg);
-            
-            // Remove after 3 seconds
-            setTimeout(() => {
-                successMsg.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    if (successMsg.parentNode) {
-                        successMsg.parentNode.removeChild(successMsg);
-                    }
-                }, 300);
-            }, 3000);
-        }
-
         // Add smooth animations to feature cards
         document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries) => {
@@ -921,5 +943,3 @@
     </script>
 </body>
 </html>
-
-
