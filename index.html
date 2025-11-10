@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: rgb(58, 123, 255);
-            --primary-dark: rgb(40, 90, 220);
-            --primary-light: rgb(100, 150, 255);
+            --primary-color: rgb(34, 197, 94);
+            --primary-dark: rgb(22, 163, 74);
+            --primary-light: rgb(74, 222, 128);
             --background-color: #ffffff;
             --text-color: #333333;
             --text-light: #666666;
@@ -89,43 +89,10 @@
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--primary-color);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
+        nav {
+            display: none;
         }
         
         /* Content Sections - Clean Design */
@@ -205,13 +172,13 @@
             transition: all 0.3s ease;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(58, 123, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
         }
         
         .bookmarklet-link:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(58, 123, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
         }
         
         .bookmarklet-link:active {
@@ -462,10 +429,6 @@
                 margin-bottom: 10px;
             }
             
-            nav ul {
-                gap: 15px;
-            }
-            
             .showcase-item {
                 padding: 30px 20px;
             }
@@ -499,12 +462,7 @@
                     API Scanner V1
                 </div>
                 <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
+                    <!-- Navigation removed -->
                 </nav>
             </div>
         </div>
@@ -519,7 +477,7 @@
                 <a href="javascript:(function(){
     const gui=document.createElement('div');
     gui.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#1e1e1e;border:1px solid #393939;border-radius:8px;padding:24px;color:#ffffff;font-family:%22Segoe UI%22,Arial,sans-serif;z-index:9999;min-width:420px;max-width:500px;box-shadow:0 8px 32px rgba(0,0,0,0.4);text-align:center;';
-    gui.innerHTML='<div style=%22text-align:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:12px;%22><svg width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22><path d=%22M12 2L2 7L12 12L22 7L12 2Z%22 fill=%22#00A2FF%22/><path d=%22M2 17L12 22L22 17%22 stroke=%22#00A2FF%22 stroke-width=%222%22/><path d=%22M2 12L12 17L22 12%22 stroke=%22#00A2FF%22 stroke-width=%222%22/></svg><strong style=%22font-size:20px;color:#ffffff;font-weight:600;%22>API V1 Scanner</strong></div><div style=%22font-size:13px;color:#b0b0b0;margin-top:8px;%22>Limited Item Threat Analysis</div></div><div style=%22font-size:14px;text-align:left;margin-bottom:20px;background:#252525;padding:20px;border-radius:6px;border:1px solid #393939;%22><div style=%22color:#ffffff;margin-bottom:12px;font-weight:600;%22>Enter Asset ID to Scan</div><input type=%22text%22 id=%22uaidInput%22 placeholder=%22Enter Asset ID (e.g. 102611803)%22 style=%22width:100%;padding:12px;border:1px solid #393939;border-radius:4px;background:#1a1a1a;color:white;margin:12px 0;font-family:monospace;font-size:13px;%22><button id=%22scanButton%22 style=%22background:#00A2FF;color:white;border:none;padding:12px 24px;border-radius:4px;font-weight:600;cursor:pointer;width:100%;font-size:14px;transition:background 0.2s;%22>Scan Asset</button></div><div id=%22scanStatus%22 style=%22margin:20px 0;padding:16px;background:#252525;border-radius:6px;font-size:13px;display:none;border:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:8px;%22><div class=%22spinner%22></div><span id=%22statusText%22 style=%22color:#00A2FF;%22>Initializing security scan...</span></div></div><div id=%22scanResults%22 style=%22display:none;text-align:left;background:#252525;padding:20px;border-radius:6px;margin-top:20px;border:1px solid #393939;%22><div style=%22color:#ffffff;font-weight:600;margin-bottom:16px;font-size:16px;%22>Security Analysis Report</div><div id=%22itemInfo%22 style=%22margin-bottom:20px;%22></div><div style=%22color:#ffffff;font-weight:600;margin-bottom:12px;font-size:14px;%22>Scan Results</div><div id=%22threatAssessment%22 style=%22background:#1a1a1a;padding:16px;border-radius:4px;font-size:13px;line-height:1.5;%22></div></div><button id=%22closeScanner%22 style=%22background:transparent;color:#b0b0b0;border:1px solid #393939;padding:10px 20px;border-radius:4px;cursor:pointer;margin-top:16px;font-size:13px;width:100%;transition:all 0.2s;%22>Close Scanner</button><style>.spinner{width:16px;height:16px;border:2px solid #393939;border-top:2px solid #00A2FF;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>';
+    gui.innerHTML='<div style=%22text-align:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:12px;%22><svg width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22><path d=%22M12 2L2 7L12 12L22 7L12 2Z%22 fill=%22#22c55e%22/><path d=%22M2 17L12 22L22 17%22 stroke=%22#22c55e%22 stroke-width=%222%22/><path d=%22M2 12L12 17L22 12%22 stroke=%22#22c55e%22 stroke-width=%222%22/></svg><strong style=%22font-size:20px;color:#ffffff;font-weight:600;%22>API V1 Scanner</strong></div><div style=%22font-size:13px;color:#b0b0b0;margin-top:8px;%22>Limited Item Threat Analysis</div></div><div style=%22font-size:14px;text-align:left;margin-bottom:20px;background:#252525;padding:20px;border-radius:6px;border:1px solid #393939;%22><div style=%22color:#ffffff;margin-bottom:12px;font-weight:600;%22>Enter Asset ID to Scan</div><input type=%22text%22 id=%22uaidInput%22 placeholder=%22Enter Asset ID (e.g. 102611803)%22 style=%22width:100%;padding:12px;border:1px solid #393939;border-radius:4px;background:#1a1a1a;color:white;margin:12px 0;font-family:monospace;font-size:13px;%22><button id=%22scanButton%22 style=%22background:#22c55e;color:white;border:none;padding:12px 24px;border-radius:4px;font-weight:600;cursor:pointer;width:100%;font-size:14px;transition:background 0.2s;%22>Scan Asset</button></div><div id=%22scanStatus%22 style=%22margin:20px 0;padding:16px;background:#252525;border-radius:6px;font-size:13px;display:none;border:1px solid #393939;%22><div style=%22display:flex;align-items:center;justify-content:center;gap:8px;%22><div class=%22spinner%22></div><span id=%22statusText%22 style=%22color:#22c55e;%22>Initializing security scan...</span></div></div><div id=%22scanResults%22 style=%22display:none;text-align:left;background:#252525;padding:20px;border-radius:6px;margin-top:20px;border:1px solid #393939;%22><div style=%22color:#ffffff;font-weight:600;margin-bottom:16px;font-size:16px;%22>Security Analysis Report</div><div id=%22itemInfo%22 style=%22margin-bottom:20px;%22></div><div style=%22color:#ffffff;font-weight:600;margin-bottom:12px;font-size:14px;%22>Scan Results</div><div id=%22threatAssessment%22 style=%22background:#1a1a1a;padding:16px;border-radius:4px;font-size:13px;line-height:1.5;%22></div></div><button id=%22closeScanner%22 style=%22background:transparent;color:#b0b0b0;border:1px solid #393939;padding:10px 20px;border-radius:4px;cursor:pointer;margin-top:16px;font-size:13px;width:100%;transition:all 0.2s;%22>Close Scanner</button><style>.spinner{width:16px;height:16px;border:2px solid #393939;border-top:2px solid #22c55e;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>';
     document.body.appendChild(gui);
     
     const uaidInput=document.getElementById('uaidInput');
@@ -570,7 +528,7 @@
             itemInfo.innerHTML=`
                 <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;margin-top:12px;%22>
                     <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ASSET ID</div>
-                    <div style=%22color:#00A2FF;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
+                    <div style=%22color:#22c55e;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
                 </div>
             `;
         } else {
@@ -588,7 +546,7 @@
                 <div style=%22display:grid;grid-template-columns:1fr 1fr;gap:12px;%22>
                     <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
                         <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ESTIMATED VALUE</div>
-                        <div style=%22color:#2ECC40;font-weight:600;font-size:14px;%22>R$ ${parseInt(item.value).toLocaleString()}</div>
+                        <div style=%22color:#22c55e;font-weight:600;font-size:14px;%22>R$ ${parseInt(item.value).toLocaleString()}</div>
                     </div>
                     <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;%22>
                         <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>RECENT AVERAGE PRICE</div>
@@ -597,17 +555,17 @@
                 </div>
                 <div style=%22background:#1a1a1a;padding:12px;border-radius:4px;margin-top:12px;%22>
                     <div style=%22color:#b0b0b0;font-size:11px;margin-bottom:4px;%22>ASSET ID</div>
-                    <div style=%22color:#00A2FF;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
+                    <div style=%22color:#22c55e;font-weight:600;font-family:monospace;font-size:13px;%22>${uaid}</div>
                 </div>
             `;
         }
         
         threatAssessment.innerHTML=`
-            <div style=%22color:#2ECC40;font-weight:600;margin-bottom:8px;font-size:16px;text-align:center;%22>
+            <div style=%22color:#22c55e;font-weight:600;margin-bottom:8px;font-size:16px;text-align:center;%22>
                 ASSET CLEAN
             </div>
             <div style=%22color:#b0b0b0;font-size:13px;text-align:center;%22>No security threats detected. This item is safe for trading.</div>
-            <div style=%22color:#2ECC40;margin-top:12px;font-size:12px;font-weight:600;text-align:center;%22>Security Scan Complete</div>
+            <div style=%22color:#22c55e;margin-top:12px;font-size:12px;font-weight:600;text-align:center;%22>Security Scan Complete</div>
         `;
         
         scanStatus.style.display='none';
@@ -660,7 +618,7 @@
         <section class="api-section">
             <div class="api-header">
                 <div class="api-icon">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-code" style="color: var(--primary-color);"></i>
                 </div>
                 <h2 class="api-title">Security API Documentation</h2>
             </div>
@@ -779,17 +737,17 @@
             
             <div class="trust-logos">
                 <div class="trust-logo">
-                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--primary-color);"></i>
                     <div style="margin-top: 10px; font-weight: 600;">Poison Detection</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-users" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
+                    <i class="fas fa-users" style="font-size: 3rem; color: var(--primary-color);"></i>
                     <div style="margin-top: 10px; font-weight: 600">Owner History</div>
                 </div>
                 
                 <div class="trust-logo">
-                    <i class="fas fa-check-circle" style="font-size: 3rem; color: rgb(58, 123, 255);"></i>
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color);"></i>
                     <div style="margin-top: 10px; font-weight: 600">Verified Security</div>
                 </div>
             </div>
