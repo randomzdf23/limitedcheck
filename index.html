@@ -11,13 +11,11 @@
             --primary-color: rgb(58, 123, 255);
             --primary-dark: rgb(40, 90, 220);
             --primary-light: rgb(100, 150, 255);
-            --roblox-dark: #191a1c;
-            --roblox-gray: #2d2f31;
-            --roblox-light-gray: #f8f9fa;
-            --roblox-white: #ffffff;
-            --roblox-green: #00b300;
-            --roblox-red: #ff4444;
-            --roblox-yellow: #ffaa00;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --section-bg: #f8f9fa;
         }
         
         * {
@@ -28,8 +26,8 @@
         
         body {
             font-family: 'Source Sans Pro', Arial, sans-serif;
-            background-color: var(--roblox-dark);
-            color: #ffffff;
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -40,13 +38,14 @@
             padding: 0 20px;
         }
         
-        /* Header - Roblox API Style */
+        /* Header - Clean Design */
         header {
-            background: var(--roblox-gray);
-            border-bottom: 1px solid #393b3d;
+            background: var(--background-color);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header-content {
@@ -63,7 +62,7 @@
             gap: 12px;
             font-weight: 700;
             font-size: 1.5rem;
-            color: white;
+            color: var(--text-color);
         }
         
         .logo-icon {
@@ -81,7 +80,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: brightness(0) invert(1); /* Makes the logo white */
         }
         
         .header-title {
@@ -90,14 +88,10 @@
             transform: translateX(-50%);
             font-weight: 700;
             font-size: 1.5rem;
-            color: #b0b3b8; /* Changed to match navigation text color */
+            color: var(--text-color);
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        .header-shield {
-            color: #b0b3b8; /* Same color as the heading */
         }
         
         nav ul {
@@ -107,7 +101,7 @@
         }
         
         nav a {
-            color: #b0b3b8;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -116,7 +110,7 @@
         }
         
         nav a:hover {
-            color: white;
+            color: var(--primary-color);
         }
         
         nav a::after {
@@ -134,13 +128,13 @@
             width: 100%;
         }
         
-        /* Content Sections - Roblox API Dark Theme */
+        /* Content Sections - Clean Design */
         .content-section {
-            background: var(--roblox-gray);
-            border-radius: 8px;
+            background: var(--section-bg);
+            border-radius: 12px;
             padding: 40px;
             margin-bottom: 30px;
-            border: 1px solid #393b3d;
+            border: 1px solid var(--border-color);
         }
         
         .section-header {
@@ -151,7 +145,7 @@
         .section-title {
             font-size: 2.2rem;
             margin-bottom: 15px;
-            color: white;
+            color: var(--text-color);
             font-weight: 700;
         }
         
@@ -159,7 +153,7 @@
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
-            color: #b0b3b8;
+            color: var(--text-light);
             font-weight: 400;
         }
         
@@ -167,12 +161,12 @@
         .install-section {
             text-align: center;
             padding: 50px;
-            background: #252729;
-            border-radius: 8px;
+            background: var(--section-bg);
+            border-radius: 12px;
             margin: 50px 0;
             position: relative;
             overflow: hidden;
-            border: 1px solid #393b3d;
+            border: 1px solid var(--border-color);
         }
         
         .install-section::before {
@@ -188,14 +182,14 @@
         .install-title {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: white;
+            color: var(--text-color);
         }
         
         .install-description {
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto 30px;
-            color: #b0b3b8;
+            color: var(--text-light);
         }
         
         .bookmarklet-link {
@@ -205,7 +199,7 @@
             border: none;
             padding: 18px 45px;
             font-size: 1.3rem;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: grab;
             margin: 20px 0;
             transition: all 0.3s ease;
@@ -231,40 +225,13 @@
             width: 100%;
         }
         
-        .instructions {
-            background: rgba(58, 123, 255, 0.1);
-            border: 1px solid rgba(58, 123, 255, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .instructions h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .instructions ol {
-            text-align: left;
-            margin-left: 20px;
-            color: #b0b3b8;
-        }
-        
-        .instructions li {
-            margin-bottom: 8px;
-        }
-        
-        /* API Documentation - Roblox Style */
+        /* API Documentation - Clean Design */
         .api-section {
-            background: #252729;
-            border-radius: 8px;
+            background: var(--section-bg);
+            border-radius: 12px;
             padding: 40px;
             margin: 50px 0;
-            border: 1px solid #393b3d;
+            border: 1px solid var(--border-color);
         }
         
         .api-header {
@@ -281,14 +248,14 @@
         
         .api-title {
             font-size: 1.8rem;
-            color: white;
+            color: var(--text-color);
             font-weight: 700;
         }
         
         .code-block {
             background: #1a1a1a;
             border: 1px solid #333;
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 25px;
             margin: 25px 0;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -330,23 +297,24 @@
         }
         
         .showcase-item {
-            background: linear-gradient(145deg, #252729, #2a2c2e);
-            border-radius: 16px;
-            border: 1px solid #393b3d;
+            background: var(--background-color);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
             padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         
         .showcase-item:hover {
             transform: translateY(-5px);
             border-color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .showcase-title {
             font-size: 2rem;
             margin-bottom: 15px;
-            color: white;
+            color: var(--text-color);
             font-weight: 700;
         }
         
@@ -362,7 +330,7 @@
         .large-code-block {
             background: #1a1a1a;
             border: 1px solid #333;
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 35px;
             margin: 25px 0;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -375,12 +343,12 @@
         
         /* Trust Indicators */
         .trust-section {
-            background: #252729;
-            border-radius: 8px;
+            background: var(--section-bg);
+            border-radius: 12px;
             padding: 50px;
             margin: 50px 0;
             text-align: center;
-            border: 1px solid #393b3d;
+            border: 1px solid var(--border-color);
         }
         
         .trust-logos {
@@ -403,11 +371,11 @@
         
         /* Footer */
         footer {
-            background: #191a1c;
-            color: #b0b3b8;
+            background: var(--section-bg);
+            color: var(--text-light);
             padding: 60px 0 30px;
             margin-top: 80px;
-            border-top: 1px solid #393b3d;
+            border-top: 1px solid var(--border-color);
         }
         
         .footer-content {
@@ -420,7 +388,7 @@
         .footer-section h3 {
             margin-bottom: 20px;
             font-size: 1.2rem;
-            color: white;
+            color: var(--text-color);
         }
         
         .footer-section ul {
@@ -432,20 +400,20 @@
         }
         
         .footer-section a {
-            color: #b0b3b8;
+            color: var(--text-light);
             text-decoration: none;
             transition: color 0.2s;
         }
         
         .footer-section a:hover {
-            color: white;
+            color: var(--primary-color);
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid #393b3d;
-            color: #8a8d90;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
             font-size: 0.9rem;
         }
         
@@ -457,55 +425,27 @@
         }
         
         .footer-legal a {
-            color: #8a8d90;
+            color: var(--text-light);
             text-decoration: none;
             transition: color 0.2s;
         }
         
         .footer-legal a:hover {
-            color: #b0b3b8;
-        }
-        
-        /* Success notification */
-        .copy-success {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 6px;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid rgba(58, 123, 255, 0.3);
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
+            color: var(--primary-color);
         }
         
         /* Warning Box */
         .warning-box {
             background: rgba(255, 170, 0, 0.1);
-            border-left: 4px solid var(--roblox-yellow);
+            border-left: 4px solid #ffaa00;
             padding: 20px;
             margin: 20px 0;
-            border-radius: 4px;
+            border-radius: 6px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             border: 1px solid rgba(255, 170, 0, 0.2);
+            color: var(--text-color);
         }
         
         /* Responsive */
@@ -556,8 +496,7 @@
                     </div>
                 </div>
                 <div class="header-title">
-                    <i class="fas fa-shield-alt header-shield"></i>
-                    Limited Checker
+                    API Scanner V1
                 </div>
                 <nav>
                     <ul>
@@ -712,16 +651,6 @@
                 </a>
             </div>
             
-            <div class="instructions">
-                <h3>How to Install:</h3>
-                <ol>
-                    <li>Drag the "Check UAID" button above to your bookmarks bar</li>
-                    <li>Visit any Roblox trading page</li>
-                    <li>Click the bookmarklet to run the security scanner</li>
-                    <li>Enter any Asset ID to check for threats</li>
-                </ol>
-            </div>
-            
             <div class="warning-box">
                 <strong>Security Notice:</strong> This scanner runs locally in your browser and does not send data to external servers. Always verify trades through official Roblox channels.
             </div>
@@ -736,12 +665,12 @@
                 <h2 class="api-title">Security API Documentation</h2>
             </div>
             
-            <p style="color: #b0b3b8; margin-bottom: 25px; line-height: 1.7;">
+            <p style="color: var(--text-light); margin-bottom: 25px; line-height: 1.7;">
                 Integrate our poison detection scanner into your Roblox trading applications using our simple JavaScript API. 
                 The scanner runs locally in the browser and provides real-time protection against poisoned limiteds.
             </p>
             
-            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
+            <h3 style="color: var(--text-color); margin: 30px 0 15px 0; font-size: 1.3rem;">Quick Start Example</h3>
             
             <div class="code-block">
                 <span class="code-comment">// Initialize the security scanner</span><br>
@@ -764,7 +693,7 @@
                 <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
             </div>
             
-            <h3 style="color: white; margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
+            <h3 style="color: var(--text-color); margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
             
             <div class="code-block">
                 <span class="code-comment">// Advanced scanner configuration</span><br>
