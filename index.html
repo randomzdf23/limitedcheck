@@ -76,7 +76,7 @@
         .roblox-logo {
             width: 28px;
             height: 28px;
-            background-image: url('https://www.citypng.com/photo/7033/hd-roblox-white-symbol-sign-icon-logo-png');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -478,7 +478,7 @@
     <div class="container">
         <section class="install-section">
             <h2 class="install-title">Quick Scan</h2>
-            <p class="install-description">Use roblox api to detect unsual activity in UAIDs and owner history</p>
+            <p class="install-description">Use Roblox API to detect unusual activity in UAIDs and owner history</p>
             
             <div class="button-container">
                 <div class="bookmarklet-link" id="draggableBookmarklet">
@@ -490,7 +490,7 @@
             <p class="drag-instructions">Drag this button to your bookmarks bar to install</p>
             
             <div class="warning-box">
-                <strong>Security Notice:</strong> Never share cookies and sensitive api keys that could lead to account theft. Please be aware of fake websites with fake domains and only use Roblox Api to verify UAIDs.
+                <strong>Security Notice:</strong> Never share cookies and sensitive API keys that could lead to account theft. Please be aware of fake websites with fake domains and only use Roblox API to verify UAIDs.
             </div>
         </section>
 
@@ -612,8 +612,8 @@
         </section>
 
         <section class="trust-section">
-            <h2 class="section-title">Check out our other Api tools</h2>
-            <p class="section-subtitle">Use roblox trades api to help and configure UAIDs</p>
+            <h2 class="section-title">Check out our other API tools</h2>
+            <p class="section-subtitle">Use Roblox trades API to help and configure UAIDs</p>
             
             <div class="trust-logos">
                 <div class="trust-logo">
@@ -714,13 +714,19 @@
             draggableBookmarklet.setAttribute('draggable', 'true');
             
             // Create a simple bookmarklet that shows an alert
-            const bookmarkletCode = `javascript:(function(){alert('Limited Checker API - Drag this to your bookmarks bar!');})();`;
+            const bookmarkletCode = `javascript:(function(){alert('Limited Checker API - Asset Scanner Initialized');})();`;
             
             // Handle drag start to set the bookmarklet data
             draggableBookmarklet.addEventListener('dragstart', function(e) {
+                // Create a temporary link element to set the bookmark name
+                const tempLink = document.createElement('a');
+                tempLink.href = bookmarkletCode;
+                tempLink.textContent = 'Check UAID';
+                
+                // Set the data for dragging
                 e.dataTransfer.setData('text/uri-list', bookmarkletCode);
                 e.dataTransfer.setData('text/plain', bookmarkletCode);
-                e.dataTransfer.setData('text/html', '<a href="' + bookmarkletCode + '">Check UAID</a>');
+                e.dataTransfer.setData('text/html', tempLink.outerHTML);
                 
                 // Add a visual feedback
                 this.style.opacity = '0.7';
@@ -736,11 +742,6 @@
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
-            });
-            
-            // Show a message when dragged successfully
-            draggableBookmarklet.addEventListener('drag', function() {
-                // Optional: Add any visual feedback during dragging
             });
         });
     </script>
