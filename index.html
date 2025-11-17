@@ -71,9 +71,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--primary-color);
-            border-radius: 8px;
-            color: white;
         }
         
         .header-title {
@@ -455,10 +452,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <span>API Scanner</span>
+                    <!-- Logo removed as requested -->
                 </div>
                 <div class="header-title">
                     API Scanner V1
@@ -476,10 +470,10 @@
             <p class="install-description">Use Roblox API to detect unusual activity in UAIDs and owner history</p>
             
             <div class="button-container">
-                <a href="javascript:(function(){alert('Limited Checker API - Asset Scanner Initialized');})();" class="bookmarklet-link" id="draggableBookmarklet">
+                <div class="bookmarklet-link" id="draggableBookmarklet">
                     <i class="fas fa-code"></i>
                     Check UAID 
-                </a>
+                </div>
             </div>
             
             <p class="drag-instructions">Drag this button to your bookmarks bar to install</p>
@@ -708,18 +702,20 @@
             // Set the bookmarklet data for dragging
             draggableBookmarklet.setAttribute('draggable', 'true');
             
+            // Create a simple bookmarklet that shows an alert
+            const bookmarkletCode = `javascript:(function(){alert('Limited Checker API - Asset Scanner Initialized');})();`;
+            
             // Handle drag start to set the bookmarklet data
             draggableBookmarklet.addEventListener('dragstart', function(e) {
                 // Create a temporary link element to set the bookmark name
                 const tempLink = document.createElement('a');
-                tempLink.href = this.href;
+                tempLink.href = bookmarkletCode;
                 tempLink.textContent = 'Check UAID';
                 
-                // Set the data for dragging - this is the key to getting the name right
-                e.dataTransfer.setData('text/uri-list', this.href);
-                e.dataTransfer.setData('text/plain', this.href);
+                // Set the data for dragging
+                e.dataTransfer.setData('text/uri-list', bookmarkletCode);
+                e.dataTransfer.setData('text/plain', bookmarkletCode);
                 e.dataTransfer.setData('text/html', tempLink.outerHTML);
-                e.dataTransfer.setData('text/x-moz-text-internal', this.href);
                 
                 // Add a visual feedback
                 this.style.opacity = '0.7';
@@ -730,10 +726,11 @@
                 this.style.opacity = '1';
             });
             
-            // Prevent default click behavior (optional)
+            // Prevent default click behavior
             draggableBookmarklet.addEventListener('click', function(e) {
-                // Uncomment the line below if you want to prevent the bookmarklet from running when clicked on the page
-                // e.preventDefault();
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
             });
         });
     </script>
