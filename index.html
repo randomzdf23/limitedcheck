@@ -65,14 +65,6 @@
             color: var(--text-color);
         }
         
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
         .header-title {
             position: absolute;
             left: 50%;
@@ -84,35 +76,6 @@
         
         nav {
             display: none;
-        }
-        
-        /* Content Sections - Clean Design */
-        .content-section {
-            background: var(--section-bg);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: var(--text-color);
-            font-weight: 700;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-            font-weight: 400;
         }
         
         /* Install Section */
@@ -165,30 +128,23 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
             user-select: none;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
         }
         
         .bookmarklet-link:hover {
             background: var(--primary-dark);
-            transform: translateX(-50%) translateY(-2px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
         }
         
         .bookmarklet-link:active {
             cursor: grabbing;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
         
         .button-container {
             display: flex;
             justify-content: center;
             width: 100%;
-            position: relative;
-            min-height: 120px;
-            margin-bottom: 20px;
         }
         
         .drag-instructions {
@@ -197,7 +153,7 @@
             font-size: 0.9rem;
         }
         
-        /* API Documentation - Clean Design */
+        /* API Documentation */
         .api-section {
             background: var(--section-bg);
             border-radius: 12px;
@@ -257,7 +213,7 @@
             color: #dcdcaa;
         }
         
-        /* UPDATED TECHNICAL SECTIONS */
+        /* Technical Sections */
         .technical-showcase {
             margin: 60px 0;
         }
@@ -490,7 +446,7 @@
             </div>
         </section>
 
-        <!-- MOVED API DOCUMENTATION SECTION HERE -->
+        <!-- API Documentation Section -->
         <section class="api-section">
             <div class="api-header">
                 <div class="api-icon">
@@ -526,39 +482,9 @@
                 <span class="code-comment">// Stop scanner when done</span><br>
                 <span class="code-function">scanner</span>.<span class="code-function">stop</span>();
             </div>
-            
-            <h3 style="color: var(--text-color); margin: 30px 0 15px 0; font-size: 1.3rem;">Advanced Configuration</h3>
-            
-            <div class="code-block">
-                <span class="code-comment">// Advanced scanner configuration</span><br>
-                <span class="code-keyword">const</span> <span class="code-function">advancedScanner</span> = <span class="code-keyword">new</span> <span class="code-function">RobloxSecurityScanner</span>({<br>
-                &nbsp;&nbsp;<span class="code-function">apiKey</span>: <span class="code-string">'your-api-key-here'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">version</span>: <span class="code-string">'3.2.1'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">mode</span>: <span class="code-string">'protection'</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">scanInterval</span>: <span class="code-number">2000</span>,<br>
-                &nbsp;&nbsp;<span class="code-function">features</span>: {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">deepScan</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">autoQuarantine</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">behavioralAnalysis</span>: <span class="code-keyword">true</span><br>
-                &nbsp;&nbsp;},<br>
-                &nbsp;&nbsp;<span class="code-function">notifications</span>: {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">enabled</span>: <span class="code-keyword">true</span>,<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">level</span>: <span class="code-string">'high'</span><br>
-                &nbsp;&nbsp;}<br>
-                });<br><br>
-                
-                <span class="code-comment">// Register event handlers</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">on</span>(<span class="code-string">'threatDetected'</span>, (threat) => {<br>
-                &nbsp;&nbsp;<span class="code-keyword">console</span>.<span class="code-function">log</span>(<span class="code-string">'Threat detected:'</span>, threat);<br>
-                &nbsp;&nbsp;<span class="code-function">showAlert</span>(<span class="code-string">'Security Alert: Poisoned limited detected!'</span>);<br>
-                });<br><br>
-                
-                <span class="code-comment">// Start the advanced scanner</span><br>
-                <span class="code-function">advancedScanner</span>.<span class="code-function">start</span>();
-            </div>
         </section>
 
-        <!-- UPDATED TECHNICAL SECTIONS -->
+        <!-- Technical Sections -->
         <section class="content-section">
             <div class="section-header">
                 <h2 class="section-title">API Documentation & Updates</h2>
@@ -686,74 +612,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.showcase-item').forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = 'all 0.6s ease';
-                observer.observe(item);
-            });
-
-            // ---------- MAKE THE GREEN CHECK UAID BUTTON DRAGGABLE ----------
-            const draggable = document.getElementById('draggableBookmarklet');
-            draggable.style.cursor = "grab";
-
-            let offsetX = 0;
-            let offsetY = 0;
-            let isDragging = false;
-
-            draggable.addEventListener("mousedown", (e) => {
-                isDragging = true;
-                draggable.style.cursor = "grabbing";
-                
-                // Calculate offset from mouse position to element position
-                const rect = draggable.getBoundingClientRect();
-                offsetX = e.clientX - rect.left;
-                offsetY = e.clientY - rect.top;
-                
-                // Add dragging class for visual feedback
-                draggable.classList.add('dragging');
-            });
-
-            document.addEventListener("mousemove", (e) => {
-                if (!isDragging) return;
-                
-                // Calculate new position
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
-                
-                // Apply new position
-                draggable.style.left = x + "px";
-                draggable.style.top = y + "px";
-            });
-
-            document.addEventListener("mouseup", () => {
-                if (!isDragging) return;
-                isDragging = false;
-                draggable.style.cursor = "grab";
-                draggable.classList.remove('dragging');
-            });
-
-            // Add CSS for dragging state
-            const style = document.createElement('style');
-            style.textContent = `
-                .bookmarklet-link.dragging {
-                    transform: none !important;
-                    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5) !important;
-                    z-index: 10000 !important;
-                }
-            `;
-            document.head.appendChild(style);
-            // ---------------------------------------------------------------
-
             // Bookmarklet code for dragging to bookmarks bar
             const draggableBookmarklet = document.getElementById('draggableBookmarklet');
             draggableBookmarklet.setAttribute('draggable', 'true');
