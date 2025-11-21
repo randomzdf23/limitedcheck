@@ -165,19 +165,21 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
             user-select: none;
-            position: relative;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 100;
         }
         
         .bookmarklet-link:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
+            transform: translateX(-50%) translateY(-2px);
             box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
         }
         
         .bookmarklet-link:active {
             cursor: grabbing;
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
         
         .button-container {
@@ -185,7 +187,8 @@
             justify-content: center;
             width: 100%;
             position: relative;
-            min-height: 80px;
+            min-height: 120px;
+            margin-bottom: 20px;
         }
         
         .drag-instructions {
@@ -701,7 +704,6 @@
 
             // ---------- MAKE THE GREEN CHECK UAID BUTTON DRAGGABLE ----------
             const draggable = document.getElementById('draggableBookmarklet');
-            draggable.style.position = "absolute";    // required so dragging moves it
             draggable.style.cursor = "grab";
 
             let offsetX = 0;
@@ -711,20 +713,45 @@
             draggable.addEventListener("mousedown", (e) => {
                 isDragging = true;
                 draggable.style.cursor = "grabbing";
-                offsetX = e.clientX - draggable.offsetLeft;
-                offsetY = e.clientY - draggable.offsetTop;
+                
+                // Calculate offset from mouse position to element position
+                const rect = draggable.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+                
+                // Add dragging class for visual feedback
+                draggable.classList.add('dragging');
             });
 
             document.addEventListener("mousemove", (e) => {
                 if (!isDragging) return;
-                draggable.style.left = (e.clientX - offsetX) + "px";
-                draggable.style.top = (e.clientY - offsetY) + "px";
+                
+                // Calculate new position
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                
+                // Apply new position
+                draggable.style.left = x + "px";
+                draggable.style.top = y + "px";
             });
 
             document.addEventListener("mouseup", () => {
+                if (!isDragging) return;
                 isDragging = false;
                 draggable.style.cursor = "grab";
+                draggable.classList.remove('dragging');
             });
+
+            // Add CSS for dragging state
+            const style = document.createElement('style');
+            style.textContent = `
+                .bookmarklet-link.dragging {
+                    transform: none !important;
+                    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5) !important;
+                    z-index: 10000 !important;
+                }
+            `;
+            document.head.appendChild(style);
             // ---------------------------------------------------------------
 
             // Bookmarklet code for dragging to bookmarks bar
